@@ -187,6 +187,17 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 **Ästhetisches User-Interface:**
   - Die Benutzeroberfläche sollte modern und ansprechend gestaltet werden (Optional nach Designsystemen wie dem Material UI Design)
 
+## Wartbarkeit und Portierbarkeit
+
+**Modularer Aufbau**
+  - Das Frontend sowie Backend sollen modular aufgebaut werden, um die Anbindung weiterer Anwendungen zu erleichtern
+
+**Gute Adaptivität**
+  - Der Code des Frontends/Backends sollte einfach wartbar und abänderbar sein
+
+**Wiederverwendbare Komponenten**
+  - Das Frontend soll aus wiederverwendbaren Komponenten aufgebaut werden
+
 ## Effizienz
 - Das Backend sollte skalierbar sein
 
@@ -194,11 +205,31 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 - Im Backend sollten so wenig verschiedene Technologien wie nötig verwendet werden (z.B. keine 10 verschiedene Backendframeworks, wenn es nicht nötig ist)
 - Es sollten standardisierte Technologien verwendet werden, z.B.: REST, JSON, JWT
 
+**Zeitverhalten**
+  - Der Nutzer sollte nicht unverhältnissmäßig lange auf Antworten des Systems warten müssen
+
+**Ressourcenverbrauch**
+  - Der Ressourcenverbrauch des Systems muss überschaubar sein
+
 ## Sicherheitsanforderungen
 - Das Backend sollte sicher vor typischen Web Applikationsschwachstellen sein (OWASP Top 10)
 
-## Normen und gesetzliche Anforderungen
-- Es sollte möglich sein, das Backend DSGVO-Konform umzusetzen
+
+**Datenschutz**
+  - Die Verarbeitung der Benutzerdaten muss nach aktuellen Datenschutzbestimmungen erfolgen (DSGVO-Konform)
+
+**Sichere Administration und Benutzeraccounts**
+  - Die Benutzeroberfläche muss durch einen Login gesichert werden
+  - Es soll über HTPPS mit einem potenziellen Server kommuniziert werden
+
+**Integrität**
+  - Die Datensicherheit und Integrität soll gewährleistet werden
+
+## Verlässlichkeit
+
+**Ausgereifte Softwarequalität**
+  - Es soll auf Namenskonventionen geachtet werden
+  - Es soll auf eine gute Lesbarkeit und Dokumentation des Codes geachtet werden
 
 # Produktdaten
 Welche Benutzerdaten speichert das System?
