@@ -175,6 +175,15 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 
 ## Wartbarkeit und Portierbarkeit
 
+**Modularer Aufbau**
+  - Das Frontend sowie Backend sollen modular aufgebaut werden, um die Anbindung weiterer Anwendungen zu erleichtern
+
+**Gute Adaptivität**
+  - Der Code des Frontends/Backends sollte einfach wartbar und abänderbar sein
+
+**Wiederverwendbare Komponenten**
+  - Das Frontend soll aus wiederverwendbaren Komponenten aufgebaut werden
+
 ## Effizienz
 
 ## Sicherheitsanforderungen
