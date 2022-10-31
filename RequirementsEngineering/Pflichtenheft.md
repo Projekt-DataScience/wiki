@@ -194,7 +194,21 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 
 ## Sicherheitsanforderungen
 
-## Normen und gesetzliche Anforderungen
+**Datenschutz**
+  - Die Verarbeitung der Benutzerdaten muss nach aktuellen Datenschutzbestimmungen erfolgen
+
+**Sichere Administration und Benutzeraccounts**
+  - Die Benutzeroberfläche muss durch einen Login gesichert werden
+  - Es soll über HTPPS mit einem potenziellen Server kommuniziert werden
+
+**Integrität**
+  - Die Datensicherheit und Integrität soll gewährleistet werden
+
+## Verlässlichkeit
+
+**Ausgereifte Softwarequalität**
+  - Es soll auf Namenskonventionen geachtet werden
+  - Es soll auf eine gute Lesbarkeit und Dokumentation des Codes geachtet werden
 
 # Produktdaten
 Welche Benutzerdaten speichert das System?
