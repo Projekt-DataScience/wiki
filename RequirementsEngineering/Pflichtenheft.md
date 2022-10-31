@@ -53,19 +53,44 @@ Für genauere Änderungshistorie, siehe Git-History.
 Hier werden alle Kriterien beschreiben, die das Produkt können muss,
 damit es für den vorgegebenen Einsatzzweck verwendet werden kann.
 
-#### Mitarbeiter
-[...snip...]
+#### Nutzer
+- Einloggen in die Web Applikation
+- Ausloggen aus der Web Applikation
+- Account verwalten: Passwort, Vorname, Nachname
+- Anzeige von Apps
+- Auswahl von Apps
+- Anzeige relevanter Fragen, während eines zugewiesenen Audits
+- Beantwortung von Audit-Fragen mit den rot, gelb und grün
+- Hinzufügen eines Kommentar, wenn eine Audit-Frage mit rot beantwortet wurde
+- Anzeige einer Übersicht mit zugewiesenen Audits
 
-#### System
-[...snip...]
+#### Prüfer
+- Audits einsehen und Statistiken zu den Audits ansehen
+- Anlegen und Löschen von Fragen
+- Anzeige einer Übersicht von Fragen
+- Anlegen von spontanen Audits: Anzahl der Fragen festlegen, Ebene zuordnen
+- Zuweisen an Audits an Nutzer
+
+#### Firmenchef
+- Hinzufügen von hierarchischen Ebenen
+- Zuweisen von Gruppen zu hierarchischen Ebenen
 
 ## Wunschkriterien
 Hier werden alle Kriterien beschrieben, die das Produkt können sollte,
 um die Wünsche an das zu entwickelnde Produkt so gut wie möglich zu erfüllen.
 
+#### Administrator
+- Anlegen von Firmen
+- Löschen von Firmen
+
+#### Firmenchef
+- Anlegen von Nutzern
+
 ## Abgrenzungskriterien
 
 Folgende Ziele werden bei dem neuen Produkt bewusst **nicht** verfolgt:
+
+- Anforderungen aus dem Lastenheft, die zum Implementieren der Layered Process Audit (LPA) Funktionalität nicht notwendig sind
 
 # Produkteinsatz
 
