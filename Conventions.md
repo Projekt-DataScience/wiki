@@ -5,6 +5,16 @@ Alle Branches müssen folgend benannt werden:
 * `main`
 * `<ISSUE-ID>-<ISSUE-TITLE>` (ohne Sonderzeichen, falls Issue Titel Sonderzeichen enthält)
 
+**Beispiel 1:**
+Issue Titel: `Konventionen`
+Issue Nummer: `16`
+Branch: `16-konventionen`
+
+**Beispiel 2:**
+Issue Titel: `Issue: Mit Leerzeichen und Doppelpunkt`
+Issue Nummer: `123`
+Branch: `123-issue-mit-leerzeichen-und-doppelpunkt`
+
 ### Main Branch
 Es ist nichts direkt in den Main Branch zu commiten. Es sollte zuerst auf einem Issue Branch gearbeitet werden, um dann ein Merge Request/Pull Request in den Main Branch zu erstellen. Außnahmen dazu sind *Hotfixes*.
 
