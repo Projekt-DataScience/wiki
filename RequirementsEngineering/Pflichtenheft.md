@@ -163,6 +163,7 @@ Hardwareumgebung
 - Authentifizierung mittels JWT Tokens
 
 # Nicht-funktionale Anforderungen
+Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 
 **Portability:**
 - Es sollte möglich sein, dass das Backend sowohl in der Cloud als auch On-Premise läuft
@@ -175,6 +176,16 @@ Hardwareumgebung
 
 ## Benutzbarkeit
 - Es sollte eine Bedienungsanleitung zum deployen des Backends erstellt werden
+
+**Optimale Erkennbarkeit:**
+  - Das Design der Benutzeroberfläche sollte Barrierefrei gestaltet sein
+
+**Erlernbarkeit:**
+  - Die Benutzeroberfläche sollte so intuitiv wie möglich gestaltet werden (Optional nach Normen "IEC 62366-1:2015" bzw. "FDA Human Factors Guidances")
+  - Unklare Bedienungsmöglichkeiten sollten erklärt werden
+
+**Ästhetisches User-Interface:**
+  - Die Benutzeroberfläche sollte modern und ansprechend gestaltet werden (Optional nach Designsystemen wie dem Material UI Design)
 
 ## Effizienz
 - Das Backend sollte skalierbar sein
