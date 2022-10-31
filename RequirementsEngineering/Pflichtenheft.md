@@ -186,6 +186,12 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 
 ## Effizienz
 
+**Zeitverhalten**
+  - Der Nutzer sollte nicht unverhältnissmäßig lange auf Antworten des Systems warten müssen
+
+**Ressourcenverbrauch**
+  - Der Ressourcenverbrauch des Systems muss überschaubar sein
+
 ## Sicherheitsanforderungen
 
 ## Normen und gesetzliche Anforderungen
