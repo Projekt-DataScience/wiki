@@ -165,17 +165,7 @@ Hardwareumgebung
 # Nicht-funktionale Anforderungen
 Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 
-**Portability:**
-- Es sollte möglich sein, dass das Backend sowohl in der Cloud als auch On-Premise läuft
-
-**Maintainability:**
-- Das Backend sollte mittels der Versionsverwaltungssoftware "Git" versioniert werden
-
-**Reliability:**
-- Backend sollte in verschiedene Module aufgeteilt werden, welche unabhängig voneinander laufen und erweitert werden können
-
 ## Benutzbarkeit
-- Es sollte eine Bedienungsanleitung zum deployen des Backends erstellt werden
 
 **Optimale Erkennbarkeit:**
   - Das Design der Benutzeroberfläche sollte Barrierefrei gestaltet sein
@@ -190,7 +180,8 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 ## Wartbarkeit und Portierbarkeit
 
 **Modularer Aufbau**
-  - Das Frontend sowie Backend sollen modular aufgebaut werden, um die Anbindung weiterer Anwendungen zu erleichtern
+  - Das Frontend soll modular aufgebaut werden, um die Anbindung weiterer Anwendungen zu erleichtern
+  - Backend sollte in verschiedene Module aufgeteilt werden, welche unabhängig voneinander laufen und erweitert werden können
 
 **Gute Adaptivität**
   - Der Code des Frontends/Backends sollte einfach wartbar und abänderbar sein
@@ -204,6 +195,13 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 **Skalierbarkeit**
   - Das Backend und Frontend sollte skalierbar sein
 
+**Installierbarkeit**
+- Es sollte möglich sein, dass das Backend sowie Frontend sowohl in der Cloud als auch On-Premise läuft
+- Es sollte eine Bedienungsanleitung zum deployen des Backends erstellt werden
+
+**Gute Analyse-Funktion**
+- Das Backend sowie Frontend sollte mittels der Versionsverwaltungssoftware "Git" versioniert werden
+
 ## Effizienz
 
 **Zeitverhalten**
@@ -213,7 +211,6 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
   - Der Ressourcenverbrauch des Systems muss überschaubar sein
 
 ## Sicherheitsanforderungen
-- Das Backend sollte sicher vor typischen Web Applikationsschwachstellen sein (OWASP Top 10)
 
 **Datenschutz**
   - Die Verarbeitung der Benutzerdaten muss nach aktuellen Datenschutzbestimmungen erfolgen (DSGVO-Konform)
@@ -222,8 +219,9 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
   - Die Benutzeroberfläche muss durch einen Login gesichert werden
   - Es soll über HTPPS mit einem potenziellen Server kommuniziert werden
 
-**Integrität**
+**Integrität und Sicherheit**
   - Die Datensicherheit und Integrität soll gewährleistet werden
+  - Das Backend sollte sicher vor typischen Web Applikationsschwachstellen sein (OWASP Top 10)
 
 ## Verlässlichkeit
 
