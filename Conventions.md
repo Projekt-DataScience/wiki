@@ -56,9 +56,9 @@ Beschreibung, was das Ziel des Issues ist, wenn es aus dem Titel nicht klar ist
 ### Python Coding Convention
 - Grundsätzlich sollten die [PEP 8](https://www.python.org/dev/peps/pep-0008/) Guidelines befolgt werden
 
-### JavaScript Coding Convention
-
-### Typescript Coding Convention
+### JavaScript & TypeScript Coding Convention
+- Es soll nach Möglichkeit Typescript verwendet werden nach dem offiziellen [TS Style Guide](https://ts.dev/style/)
+- Wenn JavaScript zum Einsatz kommt, dann nach dem [Google JS Style Guide](https://google.github.io/styleguide/jsguide.html)
 
 # Ausnahmen
 In jedem Repository können abweichende Guidelines definiert werden. Falls dem so ist, dann sollten die Guidelines im Wiki unter dem Punkt "Conventions" oder im Code Repo in einer Datei mit dem Namen "Conventions.md" dokumentiert sein.
