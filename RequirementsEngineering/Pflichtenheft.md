@@ -69,6 +69,10 @@ Folgende Ziele werden bei dem neuen Produkt bewusst **nicht** verfolgt:
 
 # Produkteinsatz
 
+Dieses Produkt wird für die Firma HWH entwickelt, die Ihren Kunden eine Plattform bietet möchte, um unterschiedliche Applikationen zu nutzen.
+Hierfür wird beispielhaft eine Applikation bereitgestellt, die es Kunden ermöglicht Layered Process Audits in Ihren Unternehmen durchzuführen.
+Die entwickelte Software soll als Open Source Projekt für jeden Interessierten zugänglich gemacht werden. 
+
 ## Anwendungsbereich
 
 ## Glossar
