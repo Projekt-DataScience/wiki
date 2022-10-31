@@ -194,16 +194,17 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 
 **Gute Adaptivität**
   - Der Code des Frontends/Backends sollte einfach wartbar und abänderbar sein
+  - Im Backend sollten so wenig verschiedene Technologien wie nötig verwendet werden (z.B. keine 10 verschiedene Backendframeworks, wenn es nicht nötig ist)
+  - Es sollten standardisierte Technologien verwendet werden, z.B.: REST, JSON, JWT
+  - Die standardmäßigen Konventionen und Projektstrukturen der Frameworks sollten nach Möglichkeit nicht verändert werden
 
 **Wiederverwendbare Komponenten**
   - Das Frontend soll aus wiederverwendbaren Komponenten aufgebaut werden
 
-## Effizienz
-- Das Backend sollte skalierbar sein
+**Skalierbarkeit**
+  - Das Backend und Frontend sollte skalierbar sein
 
-## Wartbarkeit und Portierung
-- Im Backend sollten so wenig verschiedene Technologien wie nötig verwendet werden (z.B. keine 10 verschiedene Backendframeworks, wenn es nicht nötig ist)
-- Es sollten standardisierte Technologien verwendet werden, z.B.: REST, JSON, JWT
+## Effizienz
 
 **Zeitverhalten**
   - Der Nutzer sollte nicht unverhältnissmäßig lange auf Antworten des Systems warten müssen
@@ -213,7 +214,6 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 
 ## Sicherheitsanforderungen
 - Das Backend sollte sicher vor typischen Web Applikationsschwachstellen sein (OWASP Top 10)
-
 
 **Datenschutz**
   - Die Verarbeitung der Benutzerdaten muss nach aktuellen Datenschutzbestimmungen erfolgen (DSGVO-Konform)
