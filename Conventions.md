@@ -3,7 +3,7 @@
 ## Branches
 Alle Branches müssen folgend benannt werden:
 * `main`
-* `<ISSUE-ID>-<ISSUE-TITLE>` (ohne Sonderzeichen, falls Issue Titel Sonderzeichen enthält)
+* `<ISSUE-ID>-<ISSUE-TITLE>`: Keine Sonderzeichen, wenn Titel Sonderzeichen enthält; Leerzeichen werden mit Bindestrich (`-`) ersetzt; Großbuchstaben werden mit Kleinbuchstaben ersetzt
 
 **Beispiel 1:**
 Issue Titel: `Konventionen`
