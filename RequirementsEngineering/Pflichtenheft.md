@@ -83,6 +83,8 @@ Folgende Ziele werden bei dem neuen Produkt bewusst **nicht** verfolgt:
 
 Im nachfolgenden Diagramm sind alle Use Cases, Nutzer und Beziehungen zwischen diesen abgebildet.
 
+## User-Stories
+
 ## Detailbeschreibung Use-Cases
 
 [...snip...]
@@ -156,12 +158,24 @@ darf hier nichts mehr stehen!* &gt;
 
 Hardwareumgebung
 
-Softwareumgebung
+**Softwareumgebung**  
+- Container-Engine: Docker, Docker-Compose
+- Authentifizierung mittels JWT Tokens
 
 # Nicht-funktionale Anforderungen
 Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 
+**Portability:**
+- Es sollte möglich sein, dass das Backend sowohl in der Cloud als auch On-Premise läuft
+
+**Maintainability:**
+- Das Backend sollte mittels der Versionsverwaltungssoftware "Git" versioniert werden
+
+**Reliability:**
+- Backend sollte in verschiedene Module aufgeteilt werden, welche unabhängig voneinander laufen und erweitert werden können
+
 ## Benutzbarkeit
+- Es sollte eine Bedienungsanleitung zum deployen des Backends erstellt werden
 
 **Optimale Erkennbarkeit:**
   - Das Design der Benutzeroberfläche sollte Barrierefrei gestaltet sein
@@ -185,6 +199,11 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
   - Das Frontend soll aus wiederverwendbaren Komponenten aufgebaut werden
 
 ## Effizienz
+- Das Backend sollte skalierbar sein
+
+## Wartbarkeit und Portierung
+- Im Backend sollten so wenig verschiedene Technologien wie nötig verwendet werden (z.B. keine 10 verschiedene Backendframeworks, wenn es nicht nötig ist)
+- Es sollten standardisierte Technologien verwendet werden, z.B.: REST, JSON, JWT
 
 **Zeitverhalten**
   - Der Nutzer sollte nicht unverhältnissmäßig lange auf Antworten des Systems warten müssen
@@ -193,9 +212,11 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
   - Der Ressourcenverbrauch des Systems muss überschaubar sein
 
 ## Sicherheitsanforderungen
+- Das Backend sollte sicher vor typischen Web Applikationsschwachstellen sein (OWASP Top 10)
+
 
 **Datenschutz**
-  - Die Verarbeitung der Benutzerdaten muss nach aktuellen Datenschutzbestimmungen erfolgen
+  - Die Verarbeitung der Benutzerdaten muss nach aktuellen Datenschutzbestimmungen erfolgen (DSGVO-Konform)
 
 **Sichere Administration und Benutzeraccounts**
   - Die Benutzeroberfläche muss durch einen Login gesichert werden
