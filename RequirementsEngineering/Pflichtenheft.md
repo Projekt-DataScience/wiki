@@ -159,16 +159,23 @@ Hardwareumgebung
 Softwareumgebung
 
 # Nicht-funktionale Anforderungen
-
-**Portability:**
-**Maintainability:**
-**Reliability:**
+Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 
 ## Benutzbarkeit
 
-## Effizienz
+**Optimale Erkennbarkeit:**
+  - Das Design der Benutzeroberfläche sollte Barrierefrei gestaltet sein
 
-## Wartbarkeit und Portierung
+**Erlernbarkeit:**
+  - Die Benutzeroberfläche sollte so intuitiv wie möglich gestaltet werden (Optional nach Normen "IEC 62366-1:2015" bzw. "FDA Human Factors Guidances")
+  - Unklare Bedienungsmöglichkeiten sollten erklärt werden
+
+**Ästhetisches User-Interface:**
+  - Die Benutzeroberfläche sollte modern und ansprechend gestaltet werden (Optional nach Designsystemen wie dem Material UI Design)
+
+## Wartbarkeit und Portierbarkeit
+
+## Effizienz
 
 ## Sicherheitsanforderungen
 
