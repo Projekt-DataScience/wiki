@@ -1,15 +1,11 @@
-# Login Microservice
-**Responsibility:** Login users
-**Repository-URL:**
+# Architecture
+![Image of Architecture](images/microservices.png)
 
-# Audit Microservice
-**Responsibility:** LPA Audit functionality
-**Repository-URL:**
+# Microservices
 
-# Customer Management Microservice
-**Responsibility:** Management of Customers (CRUD), Adding Login for new customers, 
-**Repository-URL:**
-
-# Organisation Management Microservice
-**Responsibility:** Adding Users for Organisation, Creating organization chart, defining roles
-**Repository-URL:**
+| Name  | Responsiblity  | Repository URL  |
+|---|---|---|
+|  Login | Login users  |   |
+| Audit  |  LPA Audit functionality |   |
+| Customer Management  |  Management of Customers (CRUD), Adding Login for new customers |   |
+| Organisation Management  |  Adding Users for Organisation, Creating organization chart, defining roles |   |
