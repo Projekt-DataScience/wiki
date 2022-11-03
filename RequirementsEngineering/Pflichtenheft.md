@@ -56,7 +56,6 @@ damit es für den vorgegebenen Einsatzzweck verwendet werden kann.
 #### Nutzer
 - Einloggen in die Web Applikation
 - Ausloggen aus der Web Applikation
-- Account verwalten: Passwort, Vorname, Nachname
 - Anzeige von Apps
 - Auswahl von Apps
 - Anzeige relevanter Fragen, während eines zugewiesenen Audits
@@ -78,6 +77,9 @@ damit es für den vorgegebenen Einsatzzweck verwendet werden kann.
 ## Wunschkriterien
 Hier werden alle Kriterien beschrieben, die das Produkt können sollte,
 um die Wünsche an das zu entwickelnde Produkt so gut wie möglich zu erfüllen.
+
+#### Nutzer
+- Account verwalten: Passwort, Vorname, Nachname
 
 #### Administrator
 - Anlegen von Firmen
