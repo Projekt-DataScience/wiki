@@ -62,12 +62,12 @@ damit es für den vorgegebenen Einsatzzweck verwendet werden kann.
 - Beantwortung von Audit-Fragen mit den rot, gelb und grün
 - Hinzufügen eines Kommentar, wenn eine Audit-Frage mit rot beantwortet wurde
 - Anzeige einer Übersicht mit zugewiesenen Audits
+- Anlegen von spontanen Audits: Anzahl der Fragen festlegen, Ebene zuordnen
 
 #### Prüfer
 - Audits einsehen und Statistiken zu den Audits ansehen
 - Anlegen und Löschen von Fragen
 - Anzeige einer Übersicht von Fragen
-- Anlegen von spontanen Audits: Anzahl der Fragen festlegen, Ebene zuordnen
 - Zuweisen an Audits an Nutzer
 
 #### Firmenchef
