@@ -280,4 +280,57 @@ Die Nicht-funktionalen Anforderungen wurden nach der ISO 25010 formuliert.
 # Produktdaten
 Welche Benutzerdaten speichert das System?
 
+## User
+- UserId
+- Vorname
+- Nachname
+- Email
+- Passwort
+- GruppeId
+
+## Ebene
+- EbenenId
+- Name
+- Erstelldatum
+- Ersteller (UserId)
+
+## Gruppe
+- GruppeId
+- EbenenId
+- Name
+
+## Fragen
+- FragenId
+- Titel (Frage)
+- Gruppe
+- Layer
+- Kategorie
+- Beschreibung
+- ErstellerId
+
+## Audit
+- AuditId
+- ErstellerId
+- Fälligkeitsdatum
+- Fragen
+- Art (spontan/geplant?)
+- Gruppe
+
+## Fragenergebnis
+- FragenId
+- AuditId
+- Farbe
+- Kommentar (nur bei Rot)
+- Abweichungsgrund (nur bei Rot)
+- Bearbeitungsdauer
+
+## Auditergebnis
+- UserId
+- AuditId
+- Dauer
+- Startdatum
+- Bearbeitungsdauer (Auditzeit)
+
+
+
 # Ergänzungen
