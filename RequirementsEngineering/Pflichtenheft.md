@@ -287,6 +287,7 @@ Welche Benutzerdaten speichert das System?
 - Email
 - Passwort
 - GruppeId
+- Rechte / Rolle
 
 ## Ebene
 - EbenenId
