@@ -9,6 +9,13 @@ Das Dashboard fasst die einzelnen Anwendungen zusammen. Wir haben hier auch Anwe
 
 ![Image of Dashboard page](images/Mockup/Dashboard.jpg)
 
+## Navigation
+Als nächstes haben wir uns einige Varianten für die Navigation der LPA-Applikation überlegt. Beim Klick auf den Dropdown kann zwischen Applikationen gewechselt werden.
+
+![Image of Navigation](images/Mockup/Ideen_Navigation.jpg)
+
+Wir haben uns dann dafür entschieden, den Dropdown weg zu lassen (siehe nächste Seiten). Vor allem, da wir aktuell ohnehin nur eine Anwendung haben und auch kommende Studenten den Link in unserer Anwendung anpassen müssten.
+
 ## Übersicht
 Die Übersicht wird angezeigt, sobald der Nutzer im Dashboard die LPA-App auswählt.
 
@@ -56,12 +63,33 @@ Die Navigation soll zugeklappt werden können.
 
 ## Konfiguration
 Die Konfiguration besteht aus den Einstellungen zum Layer und der Gruppen.
+
 ![Image of layer konfiguration](images/Mockup/Konfiguration_Hierarchieebene.jpg)
+
+#### Hinzufügen von neuen Layern
+Das Hinzufügen von neuen Layern könnte wie im folgenden Screenshot aussehen.
+
+![Image of add layer](images/Mockup/Konfiguration_Hierarchie_hinzufügen.jpg)
+
+#### Hinzufügen von neuen Layern
+Außerdem können auf dieser Seite auch neue Gruppen hinzugefügt werden zu den Ebenen.
+
+![Image of add groups to layer](images/Mockup/Konfiguration_Hierarchie_Gruppe_hinzufügen.jpg)
 
 #### Gruppeneinstellung
 Die folgende Seite soll die Gruppeneinstellung visualisieren.
 
 ![Image of group konfiguration](images/Mockup/Konfiguration_Groups.jpg)
+
+#### Hinzufügen von neuen Gruppen
+Neue Gruppen können wie folgt erstellt werden.
+
+![Image of add groups](images/Mockup/Konfiguration_Gruppe_hinzufügen.jpg)
+
+#### Hinzufügen von neuen Mitgliedern
+In jede Gruppe können neue Mitglieder hinzugefügt werden.
+
+![Image of add groups](images/Mockup/Konfiguration_Gruppe_Mitglieder_hinzufügen.jpg)
 
 #### Darkmode
 Die Seite soll nach Möglichkeit auch in den Darkmode wechseln.
