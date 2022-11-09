@@ -93,6 +93,8 @@ um die Wünsche an das zu entwickelnde Produkt so gut wie möglich zu erfüllen.
 Folgende Ziele werden bei dem neuen Produkt bewusst **nicht** verfolgt:
 
 - Anforderungen aus dem Lastenheft, die zum Implementieren der Layered Process Audit (LPA) Funktionalität nicht notwendig sind
+- Es werden nur vereinfachte Hierarchielayer abgebildet in der ersten Version, keine Basislayer
+- Es werden in der ersten Version nur spontane, keine geplanten Audits umgesetzt
 
 # Produkteinsatz
 
