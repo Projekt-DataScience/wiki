@@ -66,30 +66,10 @@ Die Konfiguration besteht aus den Einstellungen zum Layer und der Gruppen.
 
 ![Image of layer konfiguration](images/Mockup/Konfiguration_Hierarchieebene.jpg)
 
-#### Hinzufügen von neuen Layern
-Das Hinzufügen von neuen Layern könnte wie im folgenden Screenshot aussehen.
-
-![Image of add layer](images/Mockup/Konfiguration_Hierarchie_hinzufügen.jpg)
-
-#### Hinzufügen von neuer Gruppe zum Layer
-Außerdem können auf dieser Seite auch neue Gruppen hinzugefügt werden zu den Ebenen.
-
-![Image of add groups to layer](images/Mockup/Konfiguration_Hierarchie_Gruppe_hinzufügen.jpg)
-
 #### Gruppeneinstellung
 Die folgende Seite soll die Gruppeneinstellung visualisieren.
 
 ![Image of group konfiguration](images/Mockup/Konfiguration_Groups.jpg)
-
-#### Hinzufügen von neuen Gruppen
-Neue Gruppen können wie folgt erstellt werden.
-
-![Image of add groups](images/Mockup/Konfiguration_Gruppe_hinzufügen.jpg)
-
-#### Hinzufügen von neuen Mitgliedern
-In jede Gruppe können neue Mitglieder hinzugefügt werden.
-
-![Image of add groups](images/Mockup/Konfiguration_Gruppe_Mitglieder_hinzufügen.jpg)
 
 #### Darkmode
 Die Seite soll nach Möglichkeit auch in den Darkmode wechseln.
