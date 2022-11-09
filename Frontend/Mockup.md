@@ -71,7 +71,7 @@ Das Hinzufügen von neuen Layern könnte wie im folgenden Screenshot aussehen.
 
 ![Image of add layer](images/Mockup/Konfiguration_Hierarchie_hinzufügen.jpg)
 
-#### Hinzufügen von neuen Layern
+#### Hinzufügen von neuer Gruppe zum Layer
 Außerdem können auf dieser Seite auch neue Gruppen hinzugefügt werden zu den Ebenen.
 
 ![Image of add groups to layer](images/Mockup/Konfiguration_Hierarchie_Gruppe_hinzufügen.jpg)
