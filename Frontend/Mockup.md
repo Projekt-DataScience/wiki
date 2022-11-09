@@ -12,7 +12,7 @@ Das Dashboard fasst die einzelnen Anwendungen zusammen. Wir haben hier auch Anwe
 ## Navigation
 Als nächstes haben wir uns einige Varianten für die Navigation der LPA-Applikation überlegt. Beim Klick auf den Dropdown kann zwischen Applikationen gewechselt werden.
 
-![Image of Navigation](images/Mockup/Ideen_Navigation.jpg)
+![Image of Navigation](images/Mockup/Ideen_Navigation.png)
 
 Wir haben uns dann dafür entschieden, den Dropdown weg zu lassen (siehe nächste Seiten). Vor allem, da wir aktuell ohnehin nur eine Anwendung haben und auch kommende Studenten den Link in unserer Anwendung anpassen müssten.
 
