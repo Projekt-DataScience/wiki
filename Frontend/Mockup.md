@@ -29,7 +29,7 @@ Sobald in der Übersicht auf den Button "Audit erstellen" geklickt wird, wird de
 ## Audit durchführen
 Sobald auf Audit starten geklickt wird in den Aufgaben (oder auf der Übersicht-Seite) wird die folgende Seite angezeigt.
 
-![Image of make Audit page](images\Mockup\Audit_durchführen_übersicht.jpg)
+![Image of make Audit page](images/Mockup/Audit_durchführen_übersicht.jpg)
 
 #### Frage beantworten
 Im Detail wird dann jede Frage wie in der folgenden Ansicht beantwortet. Nur bei Rot wird ein Kommentarfeld eingeblendet.
@@ -72,7 +72,7 @@ Das Hinzufügen von neuen Layern könnte wie im folgenden Screenshot aussehen. A
 ![Image of add layer](images/Mockup/Konfiguration_Hierarchie_hinzufügen.jpg)
 
 #### Hinzufügen von neuer Gruppe zum Layer
-Außerdem können auf dieser Seite auch neue Gruppen hinzugefügt werden zu den Ebenen. Aktuell noch nicht fertig. Zwischenstand:
+Außerdem können auf dieser Seite auch neue Gruppen hinzugefügt werden zu den Ebenen.
 
 ![Image of add groups to layer](images/Mockup/Konfiguration_Hierarchie_Gruppe_hinzufügen.jpg)
 
