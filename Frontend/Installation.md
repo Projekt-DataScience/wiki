@@ -79,15 +79,13 @@ yarn add --dev prettier
 ```
 <br/><br/>
 
-#### Installation von Vue Router
+#### Installation von Vue Router und Vuex
 Für die Seitennavigation musste Vue Router installiert werden.
 ```bash
 yarn add vue-router@4
+yarn add vuex@next --save
 ```
 <br/><br/>
 
-#### Installation von Vuex
-Abschließend wurde als Store für die Daten Vuex installiert.
-```bash
-yarn add vuex@next --save
-```
+#### Konfiguration von Vue Router und Vuex
+Anschließend müssen einige Projektdateien angepasst werden, damit Vue Router und Vuex funktionieren.
