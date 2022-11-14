@@ -83,7 +83,7 @@ yarn add --dev prettier
 Für die Seitennavigation musste Vue Router installiert werden.
 ```bash
 yarn add vue-router@4
-yarn add vuex@next --save
+yarn add pinia
 ```
 <br/><br/>
 
@@ -96,10 +96,10 @@ import {createApp} from 'vue'
 import './style.css'
 import App from './App.vue'
 import router from './router/index'
-import { store } from './store'
+import { createPinia } from "pinia";
 
 createApp(App)
-  .use(store)
+  .use(createPinia())
   .use(router)
   .mount('#app')
 ```
@@ -152,13 +152,16 @@ Anschließend wird der Ordner `store` erstellt zusammen mit der Datei `index.ts`
 ```javascript
 /* src/store/index.ts */
 
-import { createStore } from 'vuex'
-import { RootState } from "./types";
+import { defineStore } from "pinia";
+import { ToDoItem } from "./types";
 
-export const store = createStore({
-  state () {
-    return {
-      count: 1
+export const useTodoStore = defineStore('ToDoStore', {
+  state: () => ({
+    todos:[] as ToDoItem[]
+  }),
+  actions: {
+    addTodo(item: string) {
+      this.todos.push({ item, id: 1, done: false })
     }
   }
 })
@@ -166,5 +169,9 @@ export const store = createStore({
 ```javascript
 /* src/store/types.ts */
 
-export interface RootState {}
+export interface ToDoItem {
+    item: string;
+    id: number;
+    done: boolean;
+}
 ```
