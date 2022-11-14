@@ -117,7 +117,7 @@ Dann wird die `App.vue` angepasst.
 ```
 <br/><br/>
 
-Als nächstes wird der Ordner ´views´ und `components` erstellt (sofern nicht vorhanden). Außerdem wird in views die Datei ´Home.vue´ zum testen angelegt.
+Als nächstes wird der Ordner `views` und `components` erstellt (sofern nicht vorhanden). Außerdem wird in views die Datei `Home.vue` zum testen angelegt.
 ```javascript
 /* src/views/Home.vue */
 
@@ -127,7 +127,7 @@ Als nächstes wird der Ordner ´views´ und `components` erstellt (sofern nicht 
 ```
 <br/><br/>
 
-Nun wird der Ordner ´router´ erstellt zusammen mit der Datei ´index.ts´.
+Nun wird der Ordner `router` erstellt zusammen mit der Datei `index.ts`.
 ```javascript
 /* src/router/index.ts */
 
@@ -148,7 +148,7 @@ export default router
 ```
 <br/><br/>
 
-Anschließend wird der Ordner ´store´ erstellt zusammen mit der Datei ´index.ts´ und ´types.ts´
+Anschließend wird der Ordner `store` erstellt zusammen mit der Datei `index.ts` und `types.ts`
 ```javascript
 /* src/store/index.ts */
 
