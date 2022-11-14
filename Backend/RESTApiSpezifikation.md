@@ -1,8 +1,11 @@
 *Für Beschreibung der Microservices siehe [Microservices.md](./Microservices.md)*
 
+*Response vom Backend für Erfolg/Misserfolg der Operation wird nicht in diesem Dokument explizit mitaufgenommen, z.B. wenn eine Gruppe erstellt wird, wird das Backend zurückgeben, ob es funktioniert hat. Dies wird aber in diesem Dokuemnt nicht dargestellt*
+
 # Glossar
 - "Detail", bedeutet alle Daten in der Tabelle
 - "Kompakt"/"Compact", bdeutet eine Übersicht aller wichtigen Daten, sowie Aggregierte Daten (z.B. Anzahl)
+- "Status": Ob das Audit Grün, Geld oder Rot ist
 
 # JWT Token
 | Daten  | Veranwortlicher Microservice  |
@@ -86,15 +89,17 @@ Views aus [diesem Mockup](https://xd.adobe.com/view/63b68c34-69a2-4318-9bb5-3f2a
 | Daten | Verantwortlicher Microservice |
 |-------|-------------------------------|
 | JWT Token      |  User Management                             |
+| Filter (Layer, Auditor, Status) |  Audit |
 
 #### Von Backend zu Frontend
 | Daten | Verantwortlicher Microservice |
 |-------|-------------------------------|
 |  Aufgaben     |   Tasks                            |
 |  Frage (komplette Tabelle)     |  Audit                             |
-| Auswertung Fragenantworten (Anzahl Grün, Anzahl Gelb, Anzahl Rot) -> z.B. bei Request auf questions/detail`      |   Audit                            |
+| Auswertung Fragenantworten (Anzahl Grün, Anzahl Gelb, Anzahl Rot) -> z.B. bei Request auf `questions/detail`      |   Audit                            |
+| Audits  |   Audit                            |
 
-## Auswertung
+## Auswertung (Seite 6)
 
 #### Von Frontend zu Backend
 
@@ -103,11 +108,13 @@ Views aus [diesem Mockup](https://xd.adobe.com/view/63b68c34-69a2-4318-9bb5-3f2a
 |  JWT Token     | User Management                              |
 | Filterung: Monat, Sortierung (z.B. Fragenanzahl absteigend), Pagination (Seitennummer)      |   Audit                            |
 
+
 #### Von Backend zu Frontend
 | Daten | Verantwortlicher Microservice |
 |-------|-------------------------------|
 | Analytics über Audits      |   Audit                            |
 |  Fragen (Details)     |   Audit                            |
+|  Aufgaben     |   Tasks                            |
 
 ## Konfiguration (Seite 7)
 
@@ -121,6 +128,7 @@ Views aus [diesem Mockup](https://xd.adobe.com/view/63b68c34-69a2-4318-9bb5-3f2a
 |-------|-------------------------------|
 |  Ebenen     |  User Management                             |
 | Gruppen zu jeder Ebene      |  User Management                             |
+|  Aufgaben     |   Tasks                            |
 
 ## Konfiguration - 1 (Seite 8, Gruppenverwaltung)
 
@@ -139,9 +147,53 @@ Views aus [diesem Mockup](https://xd.adobe.com/view/63b68c34-69a2-4318-9bb5-3f2a
 
 Kein Datenaustausch (evtl. Settings Update)
 
-## Audit erstellen (Seite 10)
+## Konfiguration_hierarchie_hinzufügen (Seite 10)
 
 #### Von Frontend zu Backend
+1. GET:
+
+| Daten | Verantwortlicher Microservice |
+|-------|-------------------------------|
+| Firmenname      |  User Management                             |
+
+-> Um die Layer zu bekommen für Dropdown (optional, wenn die Layer nicht bereits zwischengespeichert sind für "Konfiguration - 1")
+
+2. POST:
+
+| Daten | Verantwortlicher Microservice |
+|-------|-------------------------------|
+| JWT Token      |  User Management                             |
+| Layer     |  User Management                             |
+| Name     |  User Management                             |
+
+#### Von Backend zu Frontend
+| Daten | Verantwortlicher Microservice |
+|-------|-------------------------------|
+|  Layer (wenn angefragt)     |  User Management                             |
+
+## Konfiguration_Gruppe_hinzufügen (Seite 11)
+
+**POST:**
+
+| Daten | Verantwortlicher Microservice |
+|-------|-------------------------------|
+| JWT Token      |  User Management                             |
+| Gruppenname     |  User Management                             |
+
+#### Von Backend zu Frontend
+
+*Nichts*
+
+## Audit erstellen (Seite 12)
+
+#### Von Frontend zu Backend
+1. GET
+| Daten | Verantwortlicher Microservice |
+|-------|-------------------------------|
+| JWT Token      | User Management                              |
+
+2. POST
+
 | Daten | Verantwortlicher Microservice |
 |-------|-------------------------------|
 | JWT Token      | User Management                              |
@@ -150,13 +202,18 @@ Kein Datenaustausch (evtl. Settings Update)
 |  Ausgewählte Fragen     |  Audit                             |
 
 #### Von Backend zu Frontend
+
+Antwort auf GET:
+
 | Daten | Verantwortlicher Microservice |
 |-------|-------------------------------|
 |  Layer     | User Management                              |
 | Gruppen      |  User Management                             |
 | Fragen      |  Audit                             |
 
-## Historie zugeklappt (Seite 11)
+## Historie zugeklappt (Seite 13)
+
+*Genau das selbe wie bei Historie (Seite 5)*
 
 #### Von Frontend zu Backend
 | Daten | Verantwortlicher Microservice |
@@ -170,9 +227,19 @@ Kein Datenaustausch (evtl. Settings Update)
 | Audits      |  Audit                             |
 | Fragen (Detail)      |   Audit                            |
 
-## Fragen neue Frage (Seite 12)
+## Fragen neue Frage (Seite 14)
 
 #### Von Frontend zu Backend
+
+1. GET
+| Daten | Verantwortlicher Microservice |
+|-------|-------------------------------|
+|  JWT Token     |  User Management                             |
+|  Ausgewähltes Layer (damit man die möglichen Gruppen herausfindet)     |  User Management                             |
+|  Ausgewählte Gruppe (damit man die möglichen Kategorien herausfindet)     |  User Management   |
+
+2. POST
+
 | Daten | Verantwortlicher Microservice |
 |-------|-------------------------------|
 |  JWT Token     |  User Management                             |
@@ -184,15 +251,82 @@ Kein Datenaustausch (evtl. Settings Update)
 | Neue Kategorie      |  Audit                             |
 
 #### Von Backend zu Frontend
+
+Bei GET: 
+
 | Daten | Verantwortlicher Microservice |
 |-------|-------------------------------|
 | Ebenen      |   User Management                            |
 |  Gruppen     | User Management                              |
 | Kategorien      |  User Management                             |
 
-## Audit durchführen
+## Konfiguration_Hierarchie_Gruppe_hinzufügen (Seite 15)
 
 #### Von Frontend zu Backend
+
+1. GET (optional, wenn nicht abgespeichert wurde, damit das Dropdown mit "Gruppen" befüllt werden kann):
+
+| Daten | Verantwortlicher Microservice |
+|-------|-------------------------------|
+|  JWT Token     |  User Management                             |
+
+2. POST:
+
+| Daten | Verantwortlicher Microservice |
+|-------|-------------------------------|
+|  JWT Token     |  User Management                             |
+|  Gruppe     |  Audit                             |
+|  Fragenanzahl     |  Audit                             |
+|  Rhytmus     |  Audit                             |
+|  Tage/Wochen/Monate     |  Audit                             |
+
+#### Von Backend zu Frontend
+
+Beim GET:
+
+| Daten | Verantwortlicher Microservice |
+|-------|-------------------------------|
+|  Gruppen     |  User Management                             |
+
+## Konfiguration_Gruppe_Mitglieder_hinzufügen (Seite 16)
+
+#### Von Frontend zu Backend
+
+1. GET
+
+| Daten | Verantwortlicher Microservice |
+|-------|-------------------------------|
+|  JWT Token     |  User Management                             |
+
+2. POST
+
+| Daten | Verantwortlicher Microservice |
+|-------|-------------------------------|
+|  JWT Token     |  User Management                             |
+|  Mitglied     |  User Management                             |
+|  Basislayer (ja/nein)     |  User Management                             |
+|  Gruppe     |  User Management                             |
+
+#### Von Backend zu Frontend
+
+Beim GET:
+
+| Daten | Verantwortlicher Microservice |
+|-------|-------------------------------|
+|  User der Firma     |  User Management                             |
+
+## Audit durchführen (Seite 17)
+
+#### Von Frontend zu Backend
+
+*GET:*
+
+| Daten | Verantwortlicher Microservice |
+|-------|-------------------------------|
+| JWT Token      | User Management                              |
+
+*POST (beim Abschließen):*
+
 | Daten | Verantwortlicher Microservice |
 |-------|-------------------------------|
 | JWT Token      | User Management                              |
@@ -200,24 +334,33 @@ Kein Datenaustausch (evtl. Settings Update)
 | Wenn "Abschließen" Button gedrückt: Audit ID, Fragenantwort, Fragen ID, Dauer      |     Audit                          |
 
 #### Von Backend zu Frontend
+
+*Beim GET:*
+
 | Daten | Verantwortlicher Microservice |
 |-------|-------------------------------|
 | Audit (Detail)      |  Audit                             |
 | Fragen des Audits (Detail)      |   Audit                            |
 
-## Historie Details
+## Historie Details (Seite 18)
 
 #### Von Frontend zu Backend
+
+*GET:*
+
 | Daten | Verantwortlicher Microservice |
 |-------|-------------------------------|
 |  JWT Token     |  User Management                             |
 | Audit ID      |   Audit                            |
 
 #### Von Backend zu Frontend
+
+*Antwort auf GET:*
+
 | Daten | Verantwortlicher Microservice |
 |-------|-------------------------------|
-|  (Fragen (Detail)), weil evtl. wird das bereits im Frontend zwischengespeichert, denn die Fragen werden bereits bei der Historie zugeklappt (Seite 11) geladen     |   Audit                            |
+|  Fragen (Detail)     |   Audit                            |
 
-## Audit durchführen Frage beantworten
+## Audit durchführen Frage beantworten (Seite 19)
 
 Unwichtig für Backend, da Daten erst bei "Abschluss" zum Backend geschickt wird (vgl. Audit durchführen übersicht, Seite 13)
