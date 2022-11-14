@@ -1,10 +1,13 @@
 ## Installation der Entwicklungsumgebung
 
-In diesem Absatz wird das Klonen und Einrichten der Entwicklungsumgebung für das Frontend in Visual Studio Code beschrieben.
+Auf dieser Seite wird das Klonen und Einrichten der Entwicklungsumgebung für das Frontend in Visual Studio Code beschrieben.
+
+- [Lokale Einrichtung](#lokale-einrichtung)
+- [Initiale Konfiguration](#initiale-konfiguration)
 <br/><br/>
 
-#### Einrichten
-In diesem Absatz wird das Klonen und Einrichten der Entwicklungsumgebung für das Frontend (in Visual Studio Code) beschrieben.
+#### Lokale Einrichtung
+In diesem Absatz wird das Klonen und Einrichten der Entwicklungsumgebung für das Frontend beschrieben.
 <br/><br/>
 
 1. Vorbereitung
@@ -42,6 +45,6 @@ yarn run dev
 ```
 <br/><br/>
 
-#### Aufsetzen/Konfigurieren
+#### Initiale Konfiguration
 In diesem Absatz wird die verwendete Konfiguration für das Aufsetzen der Entwicklungsumgebung beschrieben. Diese war nur einmalig für das Aufsetzen erforderlich.
 <br/><br/>
