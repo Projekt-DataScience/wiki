@@ -88,4 +88,84 @@ yarn add vuex@next --save
 <br/><br/>
 
 #### Konfiguration von Vue Router und Vuex
-Anschließend müssen einige Projektdateien angepasst werden, damit Vue Router und Vuex funktionieren.
+Anschließend müssen einige Projektdateien angepasst werden, damit Vue Router und Vuex funktionieren. Als erstes wird die `main.ts` abgeändert.
+```javascript
+/* src/main.ts */
+
+import {createApp} from 'vue'
+import './style.css'
+import App from './App.vue'
+import router from './router/index'
+import { store } from './store'
+
+createApp(App)
+  .use(store)
+  .use(router)
+  .mount('#app')
+```
+<br/><br/>
+
+Dann wird die `App.vue` angepasst.
+```javascript
+/* src/App.vue */
+
+<template>
+  <div id="app">
+    <router-view />
+  </div>
+</template>
+```
+<br/><br/>
+
+Als nächstes wird der Ordner ´views´ und `components` erstellt (sofern nicht vorhanden). Außerdem wird in views die Datei ´Home.vue´ zum testen angelegt.
+```javascript
+/* src/views/Home.vue */
+
+<template>
+    <h1>Home!!</h1>
+</template>
+```
+<br/><br/>
+
+Nun wird der Ordner ´router´ erstellt zusammen mit der Datei ´index.ts´.
+```javascript
+/* src/router/index.ts */
+
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from '/src/views/Home.vue'
+const routes = [
+    {
+        path: '/',
+        name: 'Home',
+        component: Home,
+    },
+]
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+})
+export default router
+```
+<br/><br/>
+
+Anschließend wird der Ordner ´store´ erstellt zusammen mit der Datei ´index.ts´ und ´types.ts´
+```javascript
+/* src/store/index.ts */
+
+import { createStore } from 'vuex'
+import { RootState } from "./types";
+
+export const store = createStore({
+  state () {
+    return {
+      count: 1
+    }
+  }
+})
+```
+```javascript
+/* src/store/types.ts */
+
+export interface RootState {}
+```
+<br/><br/>
