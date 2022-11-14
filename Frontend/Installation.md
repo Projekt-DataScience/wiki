@@ -91,4 +91,3 @@ Abschließend wurde als Store für die Daten Vuex installiert.
 ```bash
 yarn add vuex@next --save
 ```
-<br/><br/>
