@@ -11,7 +11,7 @@ In diesem Absatz wird das Klonen und Einrichten der Entwicklungsumgebung für da
 <br/><br/>
 
 #### Vorbereitung
-Zunächst muss global `Git`, `Nodejs` und `NPM` installiert werden.
+Zunächst muss global [Git](https://git-scm.com/downloads) und [NodeJS](https://nodejs.org/en/download/) installiert werden.
 <br/><br/>
 
 #### Klonen des Github Repos
