@@ -11,7 +11,17 @@ In diesem Absatz wird das Klonen und Einrichten der Entwicklungsumgebung für da
 <br/><br/>
 
 #### Vorbereitung
-Zunächst muss global [Git](https://git-scm.com/downloads) und [NodeJS](https://nodejs.org/en/download/) installiert werden.
+Zunächst muss global [Git](https://git-scm.com/downloads) und [NodeJS](https://nodejs.org/en/download/) installiert werden. Zusätzlich muss Yarn global installiert werden. Dazu im Terminal den folgenden Befehl eingeben. Mit dem zweiten Befehl kann getestet werden, ob Yarn bereits installiert ist. Falls Windows 10 die Ausführung des PowerShell-Skripts verweigert, muss die PowerShell als Administrator ausgeführt werden und der folgende Befehl eingegeben werden.
+```bash
+npm install -g yarn
+yarn --version
+```
+<br/><br/>
+
+Falls Windows 10 die Ausführung des PowerShell-Skripts verweigert, muss die PowerShell als Administrator ausgeführt werden und der folgende Befehl eingegeben werden.
+```bash
+Set-ExecutionPolicy RemoteSigned
+```
 <br/><br/>
 
 #### Klonen des Github Repos
