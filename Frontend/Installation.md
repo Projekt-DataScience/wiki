@@ -41,7 +41,7 @@ cd frontend
 #### Installation von Yarn
 Installation von Yarn im Projektordner. Dabei werden automatisch nötige Dependencies installiert.
 ```bash
-npm i yarn
+yarn install
 ```
 <br/><br/>
 
