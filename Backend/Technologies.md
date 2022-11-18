@@ -1,2 +1,2 @@
 # Technologies
-See Wiki of each microservice
+See Wiki of each service
