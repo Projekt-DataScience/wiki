@@ -1,7 +1,9 @@
 # Architecture
-![Image of Architecture](images/microservices.png)
+The architecture is a SOA-based architecture. For simplicity resonse we are only using one database for all services.
 
-# Microservices
+![Image of Architecture](images/backend-architecture.drawio.png)
+
+# Services
 
 | Name  | Responsiblity  | Repository URL  |
 |---|---|---|

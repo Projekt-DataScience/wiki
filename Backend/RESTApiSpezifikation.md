@@ -1,4 +1,4 @@
-*Für Beschreibung der Microservices siehe [Microservices.md](./Microservices.md)*
+*Für Beschreibung der Services siehe [Services.md](./Services.md)*
 
 *Response vom Backend für Erfolg/Misserfolg der Operation wird nicht in diesem Dokument explizit mitaufgenommen, z.B. wenn eine Gruppe erstellt wird, wird das Backend zurückgeben, ob es funktioniert hat. Dies wird aber in diesem Dokuemnt nicht dargestellt*
 
@@ -8,7 +8,7 @@
 - "Status": Ob das Audit Grün, Geld oder Rot ist
 
 # JWT Token
-| Daten  | Veranwortlicher Microservice  |
+| Daten  | Veranwortlicher Service  |
 |---|---|
 | Vorname  | User Management  |
 | Nachname | User Management  |
@@ -26,7 +26,7 @@ Views aus [diesem Mockup](https://xd.adobe.com/view/63b68c34-69a2-4318-9bb5-3f2a
 
 #### Von Frontend zu Backend
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  Email     | User Management                              |
 | Passwort      |   User Management                            |
@@ -34,20 +34,20 @@ Views aus [diesem Mockup](https://xd.adobe.com/view/63b68c34-69a2-4318-9bb5-3f2a
 |  (URL zum Firmenname)     |  User Management                             |
 
 #### Von Backend zu Frontend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      |  User Management                             |
 
 ## Dashboard (Seite 2)
 
 #### Von Frontend zu Backend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      |  User Management                             |
 
 #### Von Backend zu Frontend
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  Aktuelle Aufgaben     |  Tasks                             |
 | Freigeschaltete Apps / Lizenzen      |  *Aktuell out of scope*                             |
@@ -56,13 +56,13 @@ Views aus [diesem Mockup](https://xd.adobe.com/view/63b68c34-69a2-4318-9bb5-3f2a
 ## Audit-Dashboard (Seite 3)
 
 #### Von Frontend zu Backend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      |  User Management                             |
 
 #### Von Backend zu Frontend
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  Analytics (z.B. Audit Score von Benutzer, Fragen des Audits, Layer und Gruppe zum Audit)    |   Audit                            |
 | Offene Audits (z.B. `audits/open`)      |    Audit                           |
@@ -72,12 +72,12 @@ Views aus [diesem Mockup](https://xd.adobe.com/view/63b68c34-69a2-4318-9bb5-3f2a
 ## Fragen (Seite 4)
 
 #### Von Frontend zu Backend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      |  User Management                             |
 
 #### Von Backend zu Frontend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  Aufgaben     |  Tasks                             |
 |  Frage (komplette Tabelle)     |   Audit                            |
@@ -86,13 +86,13 @@ Views aus [diesem Mockup](https://xd.adobe.com/view/63b68c34-69a2-4318-9bb5-3f2a
 ## Historie (Seite 5)
 
 #### Von Frontend zu Backend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      |  User Management                             |
 | Filter (Layer, Auditor, Status) |  Audit |
 
 #### Von Backend zu Frontend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  Aufgaben     |   Tasks                            |
 |  Frage (komplette Tabelle)     |  Audit                             |
@@ -103,14 +103,14 @@ Views aus [diesem Mockup](https://xd.adobe.com/view/63b68c34-69a2-4318-9bb5-3f2a
 
 #### Von Frontend zu Backend
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  JWT Token     | User Management                              |
 | Filterung: Monat, Sortierung (z.B. Fragenanzahl absteigend), Pagination (Seitennummer)      |   Audit                            |
 
 
 #### Von Backend zu Frontend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | Analytics über Audits      |   Audit                            |
 |  Fragen (Details)     |   Audit                            |
@@ -119,12 +119,12 @@ Views aus [diesem Mockup](https://xd.adobe.com/view/63b68c34-69a2-4318-9bb5-3f2a
 ## Konfiguration (Seite 7)
 
 #### Von Frontend zu Backend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      |  User Management                             |
 
 #### Von Backend zu Frontend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  Ebenen     |  User Management                             |
 | Gruppen zu jeder Ebene      |  User Management                             |
@@ -133,12 +133,12 @@ Views aus [diesem Mockup](https://xd.adobe.com/view/63b68c34-69a2-4318-9bb5-3f2a
 ## Konfiguration - 1 (Seite 8, Gruppenverwaltung)
 
 #### Von Frontend zu Backend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      |  User Management                             |
 
 #### Von Backend zu Frontend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  Gruppen     |  User Management                             |
 | Mitglieder der Gruppen      | User Management                              |
@@ -152,7 +152,7 @@ Kein Datenaustausch (evtl. Settings Update)
 #### Von Frontend zu Backend
 1. GET:
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | Firmenname      |  User Management                             |
 
@@ -160,14 +160,14 @@ Kein Datenaustausch (evtl. Settings Update)
 
 2. POST:
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      |  User Management                             |
 | Layer     |  User Management                             |
 | Name     |  User Management                             |
 
 #### Von Backend zu Frontend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  Layer (wenn angefragt)     |  User Management                             |
 
@@ -175,7 +175,7 @@ Kein Datenaustausch (evtl. Settings Update)
 
 **POST:**
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      |  User Management                             |
 | Gruppenname     |  User Management                             |
@@ -188,13 +188,13 @@ Kein Datenaustausch (evtl. Settings Update)
 
 #### Von Frontend zu Backend
 1. GET
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      | User Management                              |
 
 2. POST
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      | User Management                              |
 | Ausgewähltes Layer      |    Audit                           |
@@ -205,7 +205,7 @@ Kein Datenaustausch (evtl. Settings Update)
 
 Antwort auf GET:
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  Layer     | User Management                              |
 | Gruppen      |  User Management                             |
@@ -216,13 +216,13 @@ Antwort auf GET:
 *Genau das selbe wie bei Historie (Seite 5)*
 
 #### Von Frontend zu Backend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      |  User Management                             |
 | Pagination, Filterung (z.B. Layer)      |  Audit                             |
 
 #### Von Backend zu Frontend
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | Audits      |  Audit                             |
 | Fragen (Detail)      |   Audit                            |
@@ -232,7 +232,7 @@ Antwort auf GET:
 #### Von Frontend zu Backend
 
 1. GET
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  JWT Token     |  User Management                             |
 |  Ausgewähltes Layer (damit man die möglichen Gruppen herausfindet)     |  User Management                             |
@@ -240,7 +240,7 @@ Antwort auf GET:
 
 2. POST
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  JWT Token     |  User Management                             |
 | ID von der ausgewählten Frage, falls Frage bearbeitet wird      |  Audit                             |
@@ -254,7 +254,7 @@ Antwort auf GET:
 
 Bei GET: 
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | Ebenen      |   User Management                            |
 |  Gruppen     | User Management                              |
@@ -266,13 +266,13 @@ Bei GET:
 
 1. GET (optional, wenn nicht abgespeichert wurde, damit das Dropdown mit "Gruppen" befüllt werden kann):
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  JWT Token     |  User Management                             |
 
 2. POST:
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  JWT Token     |  User Management                             |
 |  Gruppe     |  Audit                             |
@@ -284,7 +284,7 @@ Bei GET:
 
 Beim GET:
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  Gruppen     |  User Management                             |
 
@@ -294,13 +294,13 @@ Beim GET:
 
 1. GET
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  JWT Token     |  User Management                             |
 
 2. POST
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  JWT Token     |  User Management                             |
 |  Mitglied     |  User Management                             |
@@ -311,7 +311,7 @@ Beim GET:
 
 Beim GET:
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  User der Firma     |  User Management                             |
 
@@ -321,13 +321,13 @@ Beim GET:
 
 *GET:*
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      | User Management                              |
 
 *POST (beim Abschließen):*
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      | User Management                              |
 |  Audit ID    | Audit                              |
@@ -337,7 +337,7 @@ Beim GET:
 
 *Beim GET:*
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | Audit (Detail)      |  Audit                             |
 | Fragen des Audits (Detail)      |   Audit                            |
@@ -348,7 +348,7 @@ Beim GET:
 
 *GET:*
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  JWT Token     |  User Management                             |
 | Audit ID      |   Audit                            |
@@ -357,7 +357,7 @@ Beim GET:
 
 *Antwort auf GET:*
 
-| Daten | Verantwortlicher Microservice |
+| Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  Fragen (Detail)     |   Audit                            |
 

@@ -4,3 +4,5 @@
 
 # Software Architecture
 - [Microservices explained - the What, Why and How? (Video)](https://www.youtube.com/watch?v=rv4LlmLmVWk)
+- [Service-oriented architecture
+ (Wikipedia)](https://en.wikipedia.org/wiki/Service-oriented_architecture)
