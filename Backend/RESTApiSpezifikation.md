@@ -188,6 +188,7 @@ Kein Datenaustausch (evtl. Settings Update)
 
 #### Von Frontend zu Backend
 1. GET
+
 | Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 | JWT Token      | User Management                              |
@@ -232,6 +233,7 @@ Antwort auf GET:
 #### Von Frontend zu Backend
 
 1. GET
+
 | Daten | Verantwortlicher Service |
 |-------|-------------------------------|
 |  JWT Token     |  User Management                             |
