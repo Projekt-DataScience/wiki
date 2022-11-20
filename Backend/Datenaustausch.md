@@ -1,3 +1,5 @@
+Dieses Dokuement beschreibt den Datenaustausch zwischen Frontend und Backend. Dabei wird für jede View darauf eingegangen, welche Daten vom Frontend benötigt werden und welche Daten vom Backend verarbeitet werden sollen.
+
 *Für Beschreibung der Services siehe [Services.md](./Services.md)*
 
 *Response vom Backend für Erfolg/Misserfolg der Operation wird nicht in diesem Dokument explizit mitaufgenommen, z.B. wenn eine Gruppe erstellt wird, wird das Backend zurückgeben, ob es funktioniert hat. Dies wird aber in diesem Dokuemnt nicht dargestellt*
