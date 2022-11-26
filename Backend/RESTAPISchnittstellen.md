@@ -73,6 +73,68 @@ Response Code: 200
 }
 ```
 
+## User einem Layer hinzufügen
+**POST:** `/api/user/layer/<user_id>`
+
+```json
+{
+    "layer": <layer_id>
+}
+```
+
+**Response:**
+`kompletter user model, ohne password hash`
+
+## User einer Gruppe hinzufügen
+**POST:** `/api/user/group/<user_id>`
+
+```json
+{
+    "group": <group_id>
+}
+```
+
+**Response:**
+`kompletter user model, ohne password hash`
+
+## Layer hinzufügen
+**POST:** `/api/layers`
+
+```json
+{
+   "layer_name": "Werkstattebene",
+   "layer_number": 1
+}
+```
+
+**Response:**
+
+```json
+{
+    "id": 123,
+    "layer_name": "Werkstattebene",
+    "layer_number": 1
+}
+```
+
+## Gruppe hinzufügen
+**POST:** `/api/groups`
+
+```json
+{
+   "group_name": "C-Gruppe"
+}
+```
+
+**Response:**
+
+```json
+{
+    "id": 12,
+   "group_name": "C-Gruppe"
+}
+```
+
 ## Alle Gruppen abrufen
 **GET:** `/api/groups`
 
@@ -85,6 +147,29 @@ Response Code: 200
                 "id": 1,
                 "group_name": "C-Gruppe",
                 "layer": 2
+            }
+        ]
+   }
+}
+```
+
+## Alle User in einem Layer abfragen
+**GET:** `/api/groups/<group_id>`
+
+**Response:**
+```json
+{
+   "data": {
+        "group_id": <group_id>
+        "users": [
+            {
+                "id": 1,
+                "first_name": "Tony",
+                "last_name": "Start",
+                "layer": 2,
+                "supervisor": <supervisor_id>,
+                "email": "tony.start@company.com",
+                "profile_picture": "https://images.project-datascience.com/f8e579fc-bfc7-44a2-914e-3d706a01c7d8.png"
             }
         ]
    }
@@ -109,6 +194,8 @@ Response Code: 200
    }
 }
 ```
+
+
 
 # Audit
 
@@ -148,13 +235,13 @@ TODO: muss noch genauer definiert werden
             {
                 "title": "Spontaner Audit in der C-Grupe",
                 "layer": 1,
-                "due_date": 2022-10-22T00:00:00.000Z,
+                "due_date": "2022-10-22T00:00:00.000Z",
                 "created_by": "Tony Stark"
             },
             {
                 "title": "Spontaner Audit in der TN-Grupe",
                 "layer": 1,
-                "due_date": 2022-10-22T00:00:00.000Z,
+                "due_date": "2022-10-22T00:00:00.000Z",
                 "created_by": "Tony Stark"
             }
         ]
@@ -183,6 +270,35 @@ Response:
     }
 }
 ```
+
+## Frage erstellen
+**POST:** `/api/question`
+
+```json
+{
+    "layer": <layer_id>,
+    "question": "asdf asdfasdf asd?",
+    "description": "asdfasdfj klsadjfaklsdfjaölsdk fjasdlöf asdf",
+    "category": "Qualitätssicherung",
+    "group": <group_id>,
+    "layer": <layer_id>
+}
+```
+
+**Response:**
+
+```json
+{
+    "id": 55,
+    "layer": <layer_id>,
+    "question": "asdf asdfasdf asd?",
+    "description": "asdfasdfj klsadjfaklsdfjaölsdk fjasdlöf asdf",
+    "category": "Qualitätssicherung",
+    "group": <group_id>,
+    "layer": <layer_id>
+}
+```
+
 
 ## Fragenantworten
 
@@ -218,6 +334,38 @@ Response:
 }
 ```
 
+## Neues (spontanes) Audit erstellen
+
+**POST:** `/api/audits`
+
+```json
+{
+    "due_date": "2022-10-22T00:00:00.000Z",
+    "auditor": <user_id>,
+    "assigned_group": <group_id>,
+    "assigned_layer": <layer_id>,
+    "question_count": 2
+}
+```
+
+**Response:**
+
+```json
+{
+    "due_date": "2022-10-22T00:00:00.000Z",
+    "auditor": <user_id>,
+    "assigned_group": <group_id>,
+    "assigned_layer": <layer_id>,
+    "created_by": <user_id>,
+    "duration": None,
+    "reccurent_audit": false,
+    "lpa_questions: [
+        {"question": "ajlskdf askjf öasld fj?", "description": "asdfasdfasdfsdf", "id": 12, category: "Qualitätssicherung"},
+        {"question": "asdf asdf asdf asd?", "description": "asdfasdf", "id": 2, category: "Qualitätssicherung"},
+    ]
+}
+```
+
 ## Alle Audits abfragen
 
 **GET:** `/api/audits/`
@@ -229,7 +377,7 @@ Response:
         "audits:" [
             {
                 "id": 1,
-                "due_date": 2022-10-22T00:00:00.000Z,
+                "due_date": "2022-10-22T00:00:00.000Z",
                 "duration": 10000,
                 "recurrent_audit": true,
                 "questions": [1, 4, 5, 2],
@@ -245,7 +393,60 @@ Response:
 }
 ```
 
-## Geplante Audits / Rhytmus
+## Audit durchführen
+
+
+**POST:** `/api/audit/<audit_id>`
+
+```json
+{
+    "answers": {
+        {"question": <question_id>, "answer": 0, "comment": "asdfasdf asdf sdf", "reasone": "asdfasdfadsfasd"},
+        {"question": <question_id>, "answer": 2, "comment": "", "reason": ""},
+    },
+    "duration": 120
+}
+```
+
+**Response:**
+*Kompletter audit mit allen questions und answers*
+
+## Geplantes Audit / Rhytmus / Reccurence erstellen
+
+**POST:** `/api/audit/planned`
+
+```json
+{
+    "auditor": <user_id>,
+    "group": <group_id>,
+    "layer": <layer_id>,
+    "question_count": 5,
+    "recurrence_type": "weekly",
+    "value": [
+        "monday",
+        "wednesday"
+    ]
+}
+```
+
+**Response:**
+
+```json
+{
+    "id": 22,
+    "auditor": <user_id>,
+    "group": <group_id>,
+    "layer": <layer_id>,
+    "question_count": 5,
+    "recurrence_type": "weekly",
+    "value": [
+        "monday",
+        "wednesday"
+    ]
+}
+```
+
+## Geplante Audits / Rhytmus abfragen
 
 **GET:** `/api/audit/planned/`
 
@@ -299,7 +500,7 @@ Response Code: 200
                 "title": "Spontaner Audit in der C-Gruppe",
                 "paramters": [
                     "Layer 1",
-                    2022-10-22T00:00:00.000Z
+                    "2022-10-22T00:00:00.000Z"
                 ],
                 "action": "/audit/42"
             }
