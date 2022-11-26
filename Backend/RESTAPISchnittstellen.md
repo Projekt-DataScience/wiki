@@ -400,10 +400,10 @@ Response:
 
 ```json
 {
-    "answers": {
+    "answers": [
         {"question": <question_id>, "answer": 0, "comment": "asdfasdf asdf sdf", "reasone": "asdfasdfadsfasd"},
         {"question": <question_id>, "answer": 2, "comment": "", "reason": ""},
-    },
+    ],
     "duration": 120
 }
 ```
