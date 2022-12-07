@@ -12,14 +12,10 @@ Dieses Dokuement beschreibt den Datenaustausch zwischen Frontend und Backend. Da
 # JWT Token
 | Daten  | Veranwortlicher Service  |
 |---|---|
-| Vorname  | User Management  |
-| Nachname | User Management  |
-| Firmenname | User Management  |
-| (URL zum Profilbild) | User Management  |
-| Email  | User Management  |
-| Rolle  | User Management  |
-| Fälligkeitsdatum der Session  |User Management   |
-| SessiondId  | User Management  |
+| RollenId  | User Management  |
+| Expires  |User Management   |
+| CompanyId  | User Management  |
+| RoleId  | User Management  |
 
 # Benötigte Daten pro View
 Views aus [diesem Mockup](https://xd.adobe.com/view/63b68c34-69a2-4318-9bb5-3f2ab5062958-36e5/)
