@@ -176,27 +176,6 @@ Response Code: 200
 }
 ```
 
-## Alle Gruppen unter einem gegebenen Layer abrufen
-
-**GET:** `/api/groups/<layer_id>`
-
-**Response:**
-```json
-{
-   "data": {
-        "groups": [
-            {
-                "id": 1,
-                "group_name": "C-Gruppe",
-                "layer": <layer_id>
-            }
-        ]
-   }
-}
-```
-
-
-
 # Audit
 
 ## Analytics
