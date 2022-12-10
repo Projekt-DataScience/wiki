@@ -471,19 +471,23 @@ Response:
 Response Code: 200
 ```json
 {
-   "data": {
-        "tasks": [
-            {
-                "icon_url": "/icons/lpa.png",
-                "app_name": "Layered Process Audit",
-                "title": "Spontaner Audit in der C-Gruppe",
-                "paramters": [
-                    "Layer 1",
-                    "2022-10-22T00:00:00.000Z"
-                ],
-                "action": "/audit/42"
-            }
-        ]
-    }
+  "tasks": [
+        {
+          "icon": "lpa",
+          "app_name": "Layered Process Audit",
+          "title": "Spontaner Audit in der C-Gruppe",
+          "date": "2022-10-22T00:00:00.000Z",
+          "parameter": "Layer 1",
+          "action": "/audit/42"
+        },
+        {
+          "icon": "lpa",
+          "app_name": "Layered Process Audit",
+          "title": "Spontaner Audit in der D-Gruppe",
+          "date": "2023-10-22T00:00:00.000Z",
+          "parameter": "Layer 2",
+          "action": "/audit/42"
+        }
+      ]
 }
 ```
