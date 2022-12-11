@@ -3,7 +3,7 @@ In dieser Datei werden die angebotenen Schnittstellen der Services dokumentiert.
 *Für eine genauere Beschreibung der Services siehe [Services.md](./Services.md)*
 
 # User Management
-Root-Verzeichnis: `api/user`
+Root-Verzeichnis: `api/user_management`
 
 ## Login
 
