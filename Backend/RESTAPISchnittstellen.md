@@ -478,7 +478,7 @@ Response Code: 200
           "title": "Spontaner Audit in der C-Gruppe",
           "date": "2022-10-22T00:00:00.000Z",
           "parameter": "Layer 1",
-          "action": "/audit/42"
+          "id": <audit id>
         },
         {
           "icon": "lpa",
@@ -486,7 +486,7 @@ Response Code: 200
           "title": "Spontaner Audit in der D-Gruppe",
           "date": "2023-10-22T00:00:00.000Z",
           "parameter": "Layer 2",
-          "action": "/audit/42"
+          "id": <audit id>
         }
       ]
 }
