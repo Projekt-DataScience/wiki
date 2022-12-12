@@ -21,9 +21,8 @@ Response Code: 200
 
 ```json
 {
-   "data": {
-    "auth_token": "<jwt_token>"
-   }
+  "result": 1,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJleHBpcmVzIjoxNjcwODc0Mjc4LjM5MzI2MzYsImNvbXBhbnlfaWQiOjEsInJvbGUiOiJ3b3JrZXIifQ.tRwi3y1pvGre7sMrLgRA2j2_H0fhWHxhBuUeUtEWfCQ"
 }
 ```
 
@@ -31,9 +30,8 @@ Response Code: 200
 Response Code: 401
 ```json
 {
-   "data": { 
-    "msg": "Authentication failed: Wrong email or password"
-   },
+  "result": null,
+  "token": None
 }
 ```
 
@@ -49,16 +47,136 @@ Response Code: 401
 Response Code: 200
 ```json
 {
-   "data": {
-        "first_name": "firstname",
-        "last_name": "lastname"
+    "result": 1,
+    "first_name": "Michl",
+    "last_name": "Baum"
+}
+```
+
+## Register
+**POST:** `/register`
+
+```json
+{
+                "first_name": "Franz",
+                "last_name": "Hans",
+                "email": "franzhand@xzy.de",
+                "password_hash": "test",
+                "supervisor_id": 2,
+                "layer_id": 1,
+                "company_id": 1,
+                "group_id": 1,
+                "role_id": 1
+
+            }
+```
+
+**Antwort:**
+
+```json
+{
+  "result": 1,
+  "id": 4,
+  "first_name": "Franz",
+  "last_name": "Hans"
+}
+```
+
+**Antwort (wenn Email bereits existiert):**
+
+```json
+{"result": 0, "Reason": "Email already registered"}
+```
+
+## UserInfo abfragen
+**GET:** `/user_id`
+
+```json
+{
+    "result": 1,
+    "data": [
+        {
+            "id": 2,
+            "first_name": "Josef",
+            "last_name": "Stahl",
+            "email": "josef@test.de",
+            "profile_picture_url": null,
+            "role_id": 2,
+            "group_id": 3,
+            "supervisor_id": null,
+            "layer_id": 3,
+            "company_id": 1
+        }
+    ]
+}
+```
+
+**Antwort:**
+
+```json
+{
+    "result": 1,
+    "data": {
+        "supervisor_id": 2,
+        "last_name": "Baum",
+        "id": 3,
+        "first_name": "Michl",
+        "email": "michl@test.de",
+        "profile_picture_url": null,
+        "supervisorid": null,
+        "supervisorlast_name": "Stahl",
+        "supervisorfirst_name": "Josef",
+        "company": {
+            "id": 1,
+            "company_name": "Failed Venture. INC"
+        },
+        "role": {
+            "id": 1,
+            "role_name": "worker"
+        },
+        "group": {
+            "group_name": "QA",
+            "company_id": 1,
+            "id": 2
+        },
+        "layer": {
+            "layer_name": "Office",
+            "id": 2,
+            "layer_number": 1,
+            "company_id": 1
+        }
     }
+}
+```
+
+## JWT validieren
+**POST:** `/validateJWT/`
+
+**Antwort:**
+```json
+{
+  "result": 1,
+  "payload": {
+    "user_id": 3,
+    "expires": 1670874469.1393359,
+    "company_id": 1,
+    "role": "worker"
+  }
+}
+```
+
+**Antwort (bei fehlgeschlagener Validierung):**
+Response Code: 401
+```json
+{
+  "result": 0,
+  "Reason": "JWT not valid"
 }
 ```
 
 ## Layer abfragen
 
-**GET:** `/api/layers`
+**GET:** `/layers`
 ```json
 {
    "data": {
@@ -73,20 +191,89 @@ Response Code: 200
 }
 ```
 
-## User einem Layer hinzufügen
-**POST:** `/api/user/layer/<user_id>`
+**Antwort:**
+```json
+{
+    "result": 1,
+    "data": [
+        {
+            "company_id": 1,
+            "layer_number": 0,
+            "id": 1,
+            "layer_name": "Werkstatt",
+            "company": {
+                "id": 1,
+                "company_name": "Failed Venture. INC"
+            }
+        },
+        {
+            "company_id": 1,
+            "layer_number": 1,
+            "id": 2,
+            "layer_name": "Office",
+            "company": {
+                "id": 1,
+                "company_name": "Failed Venture. INC"
+            }
+        },
+    ]
+}
+```
+
+## User einem Layer hinzufügen -> nur von Rolle "ceo" und "admin" erlaubt
+**POST:** `/user/layer/<user_id>`
 
 ```json
 {
     "layer": <layer_id>
 }
 ```
+**Antwort:**
+```json
+{
+    "result": 1,
+    "id": 3,
+    "first_name": "Michl",
+    "last_name": "Baum",
+    "email": "michl@test.de",
+    "profile_picture_url": null,
+    "supervisor": {
+        "supervisorid": null,
+        "last_name": "Stahl",
+        "first_name": "Josef"
+    },
+    "layer": {
+        "layer_name": "Office",
+        "id": 2,
+        "layer_number": 1,
+        "company_id": 1
+    },
+    "company": {
+        "id": 1,
+        "company_name": "Failed Venture. INC"
+    },
+    "group": {
+        "group_name": "Fertigung",
+        "id": 1,
+        "company_id": 1
+    },
+    "role": {
+        "id": 1,
+        "role_name": "worker"
+    }
+}
+```
 
-**Response:**
-`kompletter user model, ohne password hash`
+**Antwort (bei Fehlschlag):**
+```json
+{
+    "result": 0,
+    "Reason": "No Permission"
+}
+```
 
 ## User einer Gruppe hinzufügen
-**POST:** `/api/user/group/<user_id>`
+**POST:** `/user/group/<user_id>`
 
 ```json
 {
@@ -94,11 +281,45 @@ Response Code: 200
 }
 ```
 
-**Response:**
-`kompletter user model, ohne password hash`
+**Antwort:**
+
+```json
+{
+    "result": 1,
+    "id": 3,
+    "first_name": "Michl",
+    "last_name": "Baum",
+    "email": "michl@test.de",
+    "profile_picture_url": null,
+    "supervisor": {
+        "supervisorid": null,
+        "last_name": "Stahl",
+        "first_name": "Josef"
+    },
+    "layer": {
+        "company_id": 1,
+        "layer_number": 1,
+        "layer_name": "Office",
+        "id": 2
+    },
+    "company": {
+        "id": 1,
+        "company_name": "Failed Venture. INC"
+    },
+    "group": {
+        "company_id": 1,
+        "group_name": "QA",
+        "id": 2
+    },
+    "role": {
+        "id": 1,
+        "role_name": "worker"
+    }
+}
+```
 
 ## Layer hinzufügen
-**POST:** `/api/layers`
+**POST:** `/layers`
 
 ```json
 {
@@ -107,18 +328,29 @@ Response Code: 200
 }
 ```
 
-**Response:**
+**Antwort:**
 
 ```json
 {
-    "id": 123,
-    "layer_name": "Werkstattebene",
-    "layer_number": 1
+    "result": 1,
+    "id": 5,
+    "layer_name": "Sklaventreiber",
+    "layer_number": 1,
+    "company": {
+        "id": 1,
+        "company_name": "Failed Venture. INC"
+    }
 }
+```
+
+**Antwort (wenn Layer in der Firma schon existiert):**
+
+```json
+{"result": 0, "Reason": "Layer already exists in the Company"}
 ```
 
 ## Gruppe hinzufügen
-**POST:** `/api/groups`
+**POST:** `/groups`
 
 ```json
 {
@@ -126,53 +358,212 @@ Response Code: 200
 }
 ```
 
-**Response:**
+**Antwort:**
 
 ```json
 {
-    "id": 12,
-   "group_name": "C-Gruppe"
+    "result": 1,
+    "id": 4,
+    "group_name": "Z-Promi",
+    "company": {
+        "id": 1,
+        "company_name": "Failed Venture. INC"
+    }
 }
+```
+
+**Antwort (wenn Gruppe in der Firma schon existiert):**
+
+```json
+{"result": 0, "Reason": "Group already exists in the Company"}
 ```
 
 ## Alle Gruppen abrufen
-**GET:** `/api/groups`
+**GET:** `/groups`
 
-**Response:**
+**Antwort:**
 ```json
 {
-   "data": {
-        "groups": [
-            {
+    "result": 1,
+    "data": [
+        {
+            "company_id": 1,
+            "group_name": "Fertigung",
+            "id": 1,
+            "company": {
                 "id": 1,
-                "group_name": "C-Gruppe",
-                "layer": 2
+                "company_name": "Failed Venture. INC"
             }
-        ]
-   }
+        },
+        {
+            "company_id": 1,
+            "group_name": "QA",
+            "id": 2,
+            "company": {
+                "id": 1,
+                "company_name": "Failed Venture. INC"
+            }
+        }
+    ]
 }
 ```
 
 ## Alle User in einem Layer abfragen
-**GET:** `/api/groups/<group_id>`
+**GET:** `/group/<group_id>`
 
-**Response:**
+**Antwort:**
 ```json
 {
-   "data": {
-        "group_id": <group_id>
-        "users": [
-            {
+    "result": 1,
+    "data": [
+        {
+            "supervisor_id": 2,
+            "last_name": "Baum",
+            "id": 3,
+            "first_name": "Michl",
+            "email": "michl@test.de",
+            "profile_picture_url": null,
+            "company": {
                 "id": 1,
-                "first_name": "Tony",
-                "last_name": "Start",
-                "layer": 2,
-                "supervisor": <supervisor_id>,
-                "email": "tony.start@company.com",
-                "profile_picture": "https://images.project-datascience.com/f8e579fc-bfc7-44a2-914e-3d706a01c7d8.png"
+                "company_name": "Failed Venture. INC"
+            },
+            "role": {
+                "id": 1,
+                "role_name": "worker"
+            },
+            "group": {
+                "group_name": "QA",
+                "company_id": 1,
+                "id": 2
+            },
+            "layer": {
+                "layer_name": "Office",
+                "id": 2,
+                "company_id": 1,
+                "layer_number": 1
             }
-        ]
-   }
+        }
+    ]
+}
+```
+
+## alle Mitarbeiter von Audit Layer zurückgeben
+**GET:** `/groups/employee/{group_id}/{audit_layer_id}`
+
+**Antwort:**
+
+```json
+{
+    "result": 1,
+    "data": [
+        {
+            "supervisor_id": null,
+            "last_name": "Stahl",
+            "id": 2,
+            "first_name": "Josef",
+            "email": "josef@test.de",
+            "profile_picture_url": null,
+            "company": {
+                "id": 1,
+                "company_name": "Failed Venture. INC"
+            },
+            "role": {
+                "id": 2,
+                "role_name": "ceo"
+            },
+            "group": {
+                "company_id": 1,
+                "group_name": "Marketing",
+                "id": 3
+            },
+            "layer": {
+                "layer_name": "Geschäftsführung",
+                "id": 3,
+                "company_id": 1,
+                "layer_number": 2
+            }
+        }
+    ]
+}
+```
+
+## Alle Supervisoren im Auditlayer von den User in einer Gruppe
+**GET:** `/groups/supervisor/{audit_layer_id}`
+
+**Antwort:**
+
+```json
+{
+    "result": 1,
+    "data": [
+        {
+            "supervisor_id": 2,
+            "last_name": "Baum",
+            "id": 3,
+            "first_name": "Michl",
+            "email": "michl@test.de",
+            "profile_picture_url": null,
+            "company": {
+                "id": 1,
+                "company_name": "Failed Venture. INC"
+            },
+            "role": {
+                "id": 1,
+                "role_name": "worker"
+            },
+            "group": {
+                "group_name": "QA",
+                "company_id": 1,
+                "id": 2
+            },
+            "layer": {
+                "layer_name": "Office",
+                "id": 2,
+                "company_id": 1,
+                "layer_number": 1
+            }
+        }
+    ]
+}
+```
+
+## Alle Employees von dem Audit_layer in einer Gruppe
+**GET:** `groups/employee/{group_id}/{audit_layer_id}`
+
+**Antwort:**
+
+```json
+{
+    "result": 1,
+    "data": [
+        {
+            "supervisor_id": null,
+            "last_name": "Stahl",
+            "id": 2,
+            "first_name": "Josef",
+            "email": "josef@test.de",
+            "profile_picture_url": null,
+            "company": {
+                "id": 1,
+                "company_name": "Failed Venture. INC"
+            },
+            "role": {
+                "id": 2,
+                "role_name": "ceo"
+            },
+            "group": {
+                "company_id": 1,
+                "group_name": "Marketing",
+                "id": 3
+            },
+            "layer": {
+                "id": 3,
+                "layer_name": "Geschäftsführung",
+                "layer_number": 2,
+                "company_id": 1
+            }
+        }
+    ]
 }
 ```
 
