@@ -83,9 +83,9 @@ Response Code: 200
 ```
 
 **Antwort (wenn Email bereits existiert):**
-
+HTTP Exception: 404
 ```json
-{"result": 0, "Reason": "Email already registered"}
+{"detail": "Email already registered"}
 ```
 
 ## UserInfo abfragen
@@ -169,8 +169,7 @@ Response Code: 200
 Response Code: 401
 ```json
 {
-  "result": 0,
-  "Reason": "JWT not valid"
+  "detail": "JWT not valid"
 }
 ```
 
@@ -265,10 +264,10 @@ Response Code: 401
 ```
 
 **Antwort (bei Fehlschlag):**
+HTTP Exception: 404
 ```json
 {
-    "result": 0,
-    "Reason": "No Permission"
+    "detail": "No Permission"
 }
 ```
 
@@ -344,9 +343,9 @@ Response Code: 401
 ```
 
 **Antwort (wenn Layer in der Firma schon existiert):**
-
+HTTP Exception: 404
 ```json
-{"result": 0, "Reason": "Layer already exists in the Company"}
+{"detail": "Layer already exists in the Company"}
 ```
 
 ## Gruppe hinzufügen
@@ -373,9 +372,9 @@ Response Code: 401
 ```
 
 **Antwort (wenn Gruppe in der Firma schon existiert):**
-
+HTTP Exception: 404
 ```json
-{"result": 0, "Reason": "Group already exists in the Company"}
+{"detail": "Group already exists in the Company"}
 ```
 
 ## Alle Gruppen abrufen
