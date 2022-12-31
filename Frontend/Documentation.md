@@ -12,7 +12,10 @@ Raphi
 Raphi
 
 # Assets
-Jonas
+In den Assets werden derzeit alle verwendeten Icons und Bilder gespeichert.
+Die Icons sind in der entsprechenden Library eingefügt und sind nur für den Wiedergebrauch zusätzlich abgelegt.
+Das Login-Bild sollte in Zukunft aus dem Backend kommen und kann auf die nutzende Firma angepasst werden.
+
 
 # Libraries
 ## Components
@@ -47,9 +50,19 @@ Der Primary Button wird für die wichtigsten Links und Funktionen verwendet.
 
 | Prop | Pflicht | Standardwert | Beschreibung |
 |-----------------|---------------------------------------------|-----------------|-----------------|
-| isActive | Ja | true | Dieser Prop beschreibt, ob der Button geklickt werden kann oder nicht. |
+| isActive | Ja | - | Dieser Prop beschreibt, ob der Button geklickt werden kann oder nicht. |
+| name | Ja | - | Der angezeigte Name des Buttons |
 
-Noch Emits
+Beim Klicken des Buttons wird ein Event ausgelöst, dass die Eltern überwachen können:
+| Emit | Variablen | Beschreibung |
+|-----------------|---------------------------------------------|-----------------|
+| buttonClick | Ja | - | Dieser Prop beschreibt, ob der Button geklickt werden kann oder nicht. |
+```ts
+this.$emit('buttonClick')
+```
+
+Slots:
+
 
 ### AppButtonProfile
 ### AppButtonSecondary
