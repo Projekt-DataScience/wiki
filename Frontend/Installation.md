@@ -65,9 +65,9 @@ In diesem Absatz wird die verwendete Konfiguration für das einmalige Aufsetzen 
 <br/><br/>
 
 #### Vorbereitung
-Als Vorbereitung musste `Vite` installiert werden.
+Als Vorbereitung musste global `Vite` installiert werden.
 ```bash
-npm i vite
+npm i -g vite
 ```
 <br/><br/>
 
