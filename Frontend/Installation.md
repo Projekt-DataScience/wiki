@@ -192,3 +192,7 @@ Neue Anleitung:
 Als erstes muss NodeJS installiert werden. Hier empfiehlt sich nvm... falls für windows, nvm for windows. Ist der Node Version Manager. Damit kann jede beliebige Nodejs Version installiert werden und man kann zwischen den einzelnen Versionen wechseln. 
 
 Für Storyblook brauchen wir NodeJS 16
+
+Natürlich muss auch das Backend erst eingerichtet werden ansonsten funktioniert das Frontend nicht ordentlich.
+
+
