@@ -1,20 +1,30 @@
-## Technologien
+# Technologien
+Raphi
 
-## Architektur
+# Architektur
+Raphi
+Auch registrieren von Modulen
 
-## Ordnerstruktur
+# Ordnerstruktur
+Raphi
 
-## Assets
+# Namenskonvention
+Raphi
 
-## Libraries
-### Components
+# Assets
+Jonas
+
+# Libraries
+## Components
 Mit dem folgenden Import können die einzelnen Komponenten aus der übergeordneten Library in den Komponenten und Seiten der Module installiert werden. Im Anschluss werden die Funktionen der einzelnen Komponenten und ihre `Props` und `Emits` näher beschrieben.
 ```ts
 import {AppButtonPrimary, AppButtonSecondary, AppButtonTertiary} from "./libraries/components"
 ```
+
+Auch registrieren von neuen Komponenten in der Library
 <br/><br/>
 
-#### Inhaltsverzeichnis
+### Inhaltsverzeichnis
 Buttons
 - [AppButtonOption](#appbuttonoption)
 - [AppButtonPrimary](#appbuttonprimary)
@@ -29,43 +39,54 @@ Spezielle Buttons
 - [AppButtonThemeToggle](#appbuttonthemetoggle)
 <br/><br/>
 
-#### AppButtonAdd
-#### AppButtonNotification
-#### AppButtonOption
-#### AppButtonPrimary
+### AppButtonAdd
+### AppButtonNotification
+### AppButtonOption
+### AppButtonPrimary
 Der Primary Button wird für die wichtigsten Links und Funktionen verwendet.
 
 | Prop | Pflicht | Standardwert | Beschreibung |
 |-----------------|---------------------------------------------|-----------------|-----------------|
 | isActive | Ja | true | Dieser Prop beschreibt, ob der Button geklickt werden kann oder nicht. |
 
-#### AppButtonProfile
-#### AppButtonSecondary
-#### AppButtonTertiary
-#### AppButtonThemeToggle
+Noch Emits
 
-## Modules
-
-
-
-
-
-## Assets
-hier sind die bilder
-
-## Components
-
-### AppButtonAdd
-hier die Probs erklären und für was verwendet
+### AppButtonProfile
+### AppButtonSecondary
+### AppButtonTertiary
+### AppButtonThemeToggle
 
 ## Interfaces
-nur kurz erklären warum erstellt, für JSON austausch und typescript fehler vermeiden
 
 ## Mixins
-erklären was die beiden machen, wie einbinden
 
-## Modules
+## Services
 
-### LPA
+## Stores
 
-#### Components
+# Modules
+
+## LPA
+### Components
+#### LPADashboard
+
+### Interfaces
+
+### Router
+
+### Stores
+
+### Views
+
+## Main
+
+### Components
+
+### Router
+
+### Stores
+
+### Views
+
+# Router
+
