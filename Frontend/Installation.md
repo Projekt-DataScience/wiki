@@ -185,3 +185,10 @@ export interface ToDoItem {
     done: boolean;
 }
 ```
+
+
+
+Neue Anleitung:
+Als erstes muss NodeJS installiert werden. Hier empfiehlt sich nvm... falls für windows, nvm for windows. Ist der Node Version Manager. Damit kann jede beliebige Nodejs Version installiert werden und man kann zwischen den einzelnen Versionen wechseln. 
+
+Für Storyblook brauchen wir NodeJS 16
