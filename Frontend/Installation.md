@@ -11,21 +11,22 @@ In diesem Absatz wird das Klonen und Einrichten der Entwicklungsumgebung für da
 <br/><br/>
 
 #### Vorbereitung
-Zunächst muss global [Git](https://git-scm.com/downloads) und [NodeJS](https://nodejs.org/en/download/) installiert werden. Zusätzlich muss Yarn global installiert werden. Dazu im Terminal den folgenden Befehl eingeben. Mit dem zweiten Befehl kann getestet werden, ob Yarn bereits installiert ist. Falls Windows 10 die Ausführung des PowerShell-Skripts verweigert, muss die PowerShell als Administrator ausgeführt werden und der folgende Befehl eingegeben werden.
+Zuerst muss global [Git](https://git-scm.com/downloads) und [NodeJS](https://nodejs.org/en/download/) installiert werden. Dabei wird empfohlen, für die NodeJS Installation [NVM](https://github.com/nvm-sh/nvm) zu verwenden. Mit diesem Versionsmanager können mehrere NodeJS Versionen installiert und verwaltet werden. Wir benötigen für das Frontend die Version 16 LTS (16.0.0). Im weiteren Verlauf wird NVM vorausgesetzt. Als Code Editor empfehlen wir die Installation von Visual Studio Code. Nach den Installationen muss der PC neu gestartet werden. 
+
 ```bash
 npm install -g yarn
 yarn --version
 ```
 <br/><br/>
 
-Falls Windows 10 die Ausführung des PowerShell-Skripts verweigert, muss die PowerShell als Administrator ausgeführt werden und der folgende Befehl eingegeben werden.
+Falls Windows 10 die Ausführung des PowerShell-Skripts verweigert, muss die PowerShell als Administrator ausgeführt und der folgende Befehl eingegeben werden.
 ```bash
 Set-ExecutionPolicy RemoteSigned
 ```
 <br/><br/>
 
 #### Klonen des Github Repos
-Mit dem folgenden Befehl kann im passenden Ordner das Repo geklont werden.
+Mit dem folgenden Befehl kann im passenden Ordner das Repository geklont werden.
 ```bash
 git clone https://github.com/Projekt-DataScience/frontend.git
 ```
@@ -38,43 +39,42 @@ cd frontend
 ```
 <br/><br/>
 
-#### Installation von Yarn
-Installation von Yarn im Projektordner. Dabei werden automatisch nötige Dependencies installiert.
+#### Installation von NPM
+Als nächstes wird die aktuelle NodeJS Version mit NVM festgelegt. Mit ls werden die aktuell installierten Versionen angezeigt und mit use kann man die benötigte Version für den Ordner festlegen.
 ```bash
-yarn install
+nvm ls
+nvm use 16.0.0
 ```
 <br/><br/>
 
-#### Öffnen von Visual Studio Code
-Falls die Anwendung aus der Entwicklungsumgebung gestartet werden soll, kann man mit dem folgenden Befehl VS Code öffnen.
+Anschließend können die nötigen Dependencies für das Frontend installiert werden.
 ```bash
-code .
+npm install
 ```
 <br/><br/>
 
 #### Starten der Anwendung
-Der folgende Befehl startet den Entwicklungsserver und damit die Anwendung.
+Der folgende Befehl startet den Entwicklungsserver und damit die Anwendung. Hinweis: Für den Betrieb des Frontends muss selbstverständlich auch das Backend eingerichtet sein, um sich einzuloggen und die benötigten Daten anzuzeigen.
 ```bash
-yarn run dev
+npm run dev
 ```
 <br/><br/>
 
 ## Initiale Konfiguration
-In diesem Absatz wird die verwendete Konfiguration für das Aufsetzen der Entwicklungsumgebung beschrieben. Diese war nur einmalig für das Aufsetzen erforderlich.
+In diesem Absatz wird die verwendete Konfiguration für das einmalige Aufsetzen der Entwicklungsumgebung beschrieben (die oben beschriebene [Anleitung](#lokale-einrichtung) ist zum Entwickeln und Starten der Anwendung ausreichend).
 <br/><br/>
 
 #### Vorbereitung
-Als Vorbereitung mussten `Yarn`, `Vue` und `Vite` installiert werden.
+Als Vorbereitung musste `Vite` installiert werden.
 ```bash
-npm i yarn
-yarn add vite
+npm i vite
 ```
 <br/><br/>
 
 #### Erstellen der Vuejs Installation
-Mit dem folgenden Befehl kann ein neues Vuejs Projekt erstellt werden mit Vite.
+Mit dem folgenden Befehl kann ein neues Vuejs Projekt erstellt werden.
 ```bash
-yarn create tw <project name>
+npm create tw <project name>
 ```
 
 Konfiguration von Vite
@@ -185,14 +185,3 @@ export interface ToDoItem {
     done: boolean;
 }
 ```
-
-
-
-Neue Anleitung:
-Als erstes muss NodeJS installiert werden. Hier empfiehlt sich nvm... falls für windows, nvm for windows. Ist der Node Version Manager. Damit kann jede beliebige Nodejs Version installiert werden und man kann zwischen den einzelnen Versionen wechseln. 
-
-Für Storyblook brauchen wir NodeJS 16
-
-Natürlich muss auch das Backend erst eingerichtet werden ansonsten funktioniert das Frontend nicht ordentlich.
-
-
