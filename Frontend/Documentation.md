@@ -2,8 +2,8 @@
 Raphi
 
 # Architektur
-Raphi
-Auch registrieren von Modulen
+![Image of Architecture](images/frontend_abstract_architecture.png)
+
 
 # Ordnerstruktur
 Raphi
