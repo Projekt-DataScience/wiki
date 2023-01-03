@@ -88,7 +88,6 @@ Der AppButtonAdd ist ein spezieller Button, der für das Hinzufügen von neuen I
 | Prop | name | Ja | - | Dieser Prop übergibt den Namen, der als Call to Action im Button angezeigt wird. |
 | Prop | id | Nein | null | Mit diesem Prop kann für den Button eine ID vergeben werden. |
 
-
 <br/><br/>
 
 ### AppButtonNotification
@@ -101,7 +100,6 @@ Die Komponente verfügt über keine Aktionen.
 
 <br/><br/>
 
-
 ### AppButtonOption
 Der AppButtonOption ist der Button, der für Einstellungen in Containern und Listen verwendet wird. Über ihn können beispielsweise Elemente gelöscht oder bearbeitet werden. In der ersten Phase der Roadmap haben wir allerdings nur den Button umgesetzt und noch keine Einstellmöglichkeiten hinterlegt.
 
@@ -112,6 +110,7 @@ Der AppButtonOption ist der Button, der für Einstellungen in Containern und Lis
 |-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
 | Prop | isVertical | Ja | - | Dieser Prop beschreibt, ob der Button horizontal oder vertikal verwendet wird. |
 | Emit | buttonClick | - | - | Beim Klicken des Buttons wird ein Event ausgelöst, dass die Eltern der Komponente überwachen können. |
+
 <br/><br/>
 
 ### AppButtonPrimary
@@ -127,10 +126,7 @@ Der AppButtonPrimary ist der Primary Button des Designsystems und wird für die 
 | Emit | buttonClick | - | - | Beim Klicken des Buttons wird ein Event ausgelöst, dass die Eltern der Komponente überwachen können. |
 | Slot | icon | - | - | In diesen Slot kann ein Icon eingefügt werden, dass im Button angezeigt wird. |
 
-
 <br/><br/>
-
-
 
 ### AppButtonProfile
 Der AppButtonProfile ist ein spezieller Button, der einen Popup mit den wichtigsten Einstellmöglichkeiten für das Profil öffnet.
@@ -153,7 +149,6 @@ Der AppButtonSecondary wird für die zweitwichtigsten Call to Actions verwendet.
 | Prop | name | Ja | - | Der angezeigte Name des Buttons, der für die Call to Action verwendet wird. |
 | Emits | buttonClick | - | - | Beim Klicken des Buttons wird ein Event ausgelöst, dass die Eltern der Komponente überwachen können. |
 
-
 <br/><br/>
 
 ### AppButtonTertiary
@@ -168,7 +163,6 @@ Der AppButtonTertiary wird für die drittwichtigsten Call to Actions verwendet. 
 | Prop | id | Nein | null | Mit diesem Prop kann für den Button eine ID vergeben werden. |
 | Prop | isActive | Nein | true | Dieser Prop beschreibt, ob der Button geklickt werden kann oder nicht. |
 | Emits | buttonClick | - | - | Beim Klicken des Buttons wird ein Event ausgelöst, dass die Eltern der Komponente überwachen können. |
-
 
 <br/><br/>
 
