@@ -217,7 +217,7 @@ Die aktuelle IconLibrary wird über die Komponente AppIconLibrary realisiert. Du
 <br/><br/>
 
 **Übersicht über die Icons:**<br/>
-Alle Icons mit ihrem Namen und möglichen Type Props.
+Alle Icons mit ihrem Namen und möglichen Type Props. @Jonas
 <br/><br/>
 
 
@@ -351,19 +351,184 @@ Die AppInputDropdown-Komponente wird verwendet, wenn ein Dropdown-Item im Input 
 <br/><br/>
 
 ### AppInputTextField
+@Jonas
+
+<br/><br/>
+
 ### AppListContainer
+Der AppListContainer wird für Listen verwendet und besitzt drei Spalten. Die linke und rechte Spalte sind optional, die mittlere muss übergeben werden als Slot. Die Komponente ist die Zeile einer Liste. Beispielsweise wird auf der Main Dashboard Seite für jede Zeile das App Icon in den linken Slot, den Namen in den mittleren Slot und ein Button in den rechten Slot der Listenzeile gerendert.
+
+<br/><br/>
+
+**Aktionen:**
+
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Prop | isLast | Nein | true | Hier wird festgelegt, ob ein neuer Trennstrich gerendert wird oder nicht. Wenn `true` übergeben wird, wird kein Trennstrich angefügt. |
+| Prop | alignment | Nein | center | Dieser Prop regelt die vertikale Zentrierung der Zeile. Wird hier beispielsweise `"start"` übergeben, sind alle Elemente nicht zentriert, sondern oben bündig. |
+| Slot | wrapperLeft | Nein | - | Dieser Slot rendert die linke Spalte des Containers. |
+| Slot | wrapperContent | Ja | - | Dieser Slot rendert die mittlere Spalte des Containers. |
+| Slot | wrapperRight | Nein | - | Dieser Slot rendert die rechte Spalte des Containers. |
+
+<br/><br/>
+
 ### AppListText
+Diese Komponente ist der Text, der in den Containern und Listen verwendet wird. Sie kann auch Teil von anderen Listen Komponenten sein.
+
+<br/><br/>
+
+**Aktionen:**
+
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Prop | text | Ja | - | Hier wird der Text übergeben, der gerendert werden soll. |
+
+<br/><br/>
+
 ### AppListTextAndSubtext
+Die AppListTextAndSubtext kombiniert die Komponenten AppListText und AppListTextWithDividerLines. Sie wird standardmäßig für die meisten Listen verwendet und beinhaltet neben dem Haupttitel auch noch einige Parameter als Untertitel.
+
+<br/><br/>
+
+**Aktionen:**
+
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Prop | text | Ja | - | Hier wird der Text übergeben, der gerendert werden soll. |
+| Prop | subtext | Ja | - | In diesem Prop wird als Array der Subtext übergeben, der an die AppListTextWithDividerLines Komponente übergeben werden soll. |
+
+<br/><br/>
+
 ### AppListTextWithDividerLines
+Die AppListTextWithDividerLines trennt verschiedene Inhalte mit einer blauen Trennlinie. Sie wird beispielsweise für Untertitel in den Listen verwendet. Es können aktuell Bilder-Urls, zweistufige Texte, graue Texte und schwarze Texte übergeben werden.
+
+<br/><br/>
+
+**Aktionen:**
+
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Prop | text | Nein | - | Hier wird der Text übergeben, der gerendert werden soll. |
+| Prop | isLast | Ja | - | Hier wird festgelegt, ob ein neuer Trennstrich gerendert wird oder nicht. Wenn `true` übergeben wird, wird kein Trennstrich angefügt.  |
+| Prop | imgPath | Nein | - | Falls angegeben, wird der übergebene String als Bild-Url verwendet. |
+| Prop | subtext | Nein | - | Falls angegeben, wird dieser Wert über den aktuellen Text gerendert. Beispielsweise kann so beschrieben werden, was der aktuelle Text bedeutet. Beispielsweise `Auditor` als Subtext und `Tony Stark` als Text. |
+| Prop | boldText | Nein | - | Wenn hier `true` übergeben wird, wird der Text nicht grau, sondern schwarz gerendert. |
+
+<br/><br/>
+
 ### AppNavigationItem
+Die Komponente AppNavigationItem ist das inaktive Pendant zur Komponente AppNavigationItemActive. Beide Komponenten werden als Navigationsitems verwendet. Falls die aktuelle Seite nicht der Seite entspricht, die durch die Komponente beschrieben wird, wird die AppNavigationItem verwendet und nicht die AppNavigationItemActive. In Zukunft könnten die beiden auch in eine Komponenten mit einem isActive Prop überführt werden.
+
+<br/><br/>
+
+**Aktionen:**
+
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Prop | itemName | Ja | - | Dieser Prop beschreibt den aktuellen Namen des Navigationselements. |
+| Prop | routerName | Ja | - | Dieser Prop bestimmt die Seite, zu der über das Navigationselement weitergeleitet wird. |
+| Prop | iconName | Ja | - | Dieser Prop beinhaltet das Icon, dass neben dem Namen gerendert wird. |
+| Prop | toggleIsActive | Ja | true | Hier wird als Prop von der Elternkomponente übergeben, ob der Sidebar Toggle Button aktuell aktiv ist oder nicht. Ist er nicht aktiv, wird nur das Icon und nicht der Name gerendert. |
+
+<br/><br/>
+
 ### AppNavigationItemActive
+Die Komponente AppNavigationItemActive ist das aktive Pendant zur Komponente AppNavigationItem. Beide Komponenten werden als Navigationsitems verwendet. Falls die aktuelle Seite nicht der Seite entspricht, die durch die Komponente beschrieben wird, wird die AppNavigationItem verwendet und nicht die AppNavigationItemActive. In Zukunft könnten die beiden auch in eine Komponenten mit einem isActive Prop überführt werden.
+
+<br/><br/>
+
+**Aktionen:**
+
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Prop | itemName | Ja | - | Dieser Prop beschreibt den aktuellen Namen des Navigationselements. |
+| Prop | iconName | Ja | - | Dieser Prop beinhaltet das Icon, dass neben dem Namen gerendert wird. |
+| Prop | toggleIsActive | Ja | true | Hier wird als Prop von der Elternkomponente übergeben, ob der Sidebar Toggle Button aktuell aktiv ist oder nicht. Ist er nicht aktiv, wird nur das Icon und nicht der Name gerendert. |
+
+<br/><br/>
+
 ### AppPageLayout
+Diese Komponente wird auf jeder Seite verwendet und definiert das Layout der Seite. Sie verfügt über einen Header, eine Sidebar, eine Subsidebar und den Content Bereich, auf dem der Inhalt der Seite angezeigt wird. Sie regelt auch den Toggle zwischen der großen und kleinen Sidebar und kümmert sich auch um den Abstand der einzelnen Bereiche untereinander.
+
+<br/><br/>
+
+**Aktionen:**
+
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Slot | sidebar | Nein | - | Dieser Slot rendert die aktuelle Sidebar der Seite. |
+| Slot | subsidebar | Nein | - | Dieser Slot rendert Einstellmöglichkeiten zur aktuellen Seite. Hier könnten zum Beispiel Filteroptionen angezeigt werden. |
+| Slot | header | Ja | - | Der Header Slot rendert den aktuellen Header der Seite. |
+| Slot | content | Ja | - | Der Content Slot rendert den Content der Seite. |
+
+<br/><br/>
+
 ### AppPopup
+Diese Komponente rendert den Popup auf den verschiedenen Seiten.
+
+<br/><br/>
+
+**Aktionen:**
+
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Slot | - | Ja | - | Dieser Slot rendert den Inhalt des Popups. |
+
+<br/><br/>
+
 ### AppSearchAndFilterBar
+Die AppSearchAndFilterBar ist die typische Header Komponente für die verschiedenen Seiten. Aktuell funktioniert die Suche nicht, sie soll aber in Zukunft als Filter für die Seite fungieren.
+
+<br/><br/>
+
+**Aktionen:**
+
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Slot | wrapperRight | Nein | - | Dieser Slot rendert die rechte Seite des Headers. Beispielsweise kann hier ein Button mit einer Call to Action eingefügt werden. |
+
+<br/><br/>
+
 ### AppSidebar
+Diese Komponente ist die übergeordnete Sidebar für alle Module. Sie besitzt einen Slot für den Header und einen Slot für die Navigation Items. Zusätzlich zeigt sie auch den DualSidebarButton an, der sowohl Einstellmöglichkeiten als auch aktuelle Aufgaben beinhaltet.
+
+<br/><br/>
+
+**Aktionen:**
+
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Prop | toggleIsActive | Ja | true | Hier wird als Prop von der Elternkomponente übergeben, ob der Sidebar Toggle Button aktuell aktiv ist oder nicht. Ist er nicht aktiv, wird nur das Icon und nicht der Name gerendert. |
+| Slot | navigationItems | Ja | - | Dieser Slot rendert die Navigation Items des Moduls. |
+| Slot | sidebarHeader | Ja | - | Dieser Slot rendert den Header des Moduls. |
+
+<br/><br/>
+
 ### AppSidebarHeader
+Der AppSidebarHeader ist der aktuelle Header des Moduls.
+
+<br/><br/>
+
+**Aktionen:**
+
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Prop | brandingName | Ja | - | Dieser Prop übergibt den Markennamen an den Header. Beispielsweise `"MyCompany"`. |
+| Prop | moduleName | Ja | - | Dieser Prop übergibt den Namen des Moduls an den Header. Beispielsweise `"Layered Process Audit"`. |
+| Emit | toggleIsActive | - | - | Beim Klicken des Sidebar Toggle Buttons wird ein Event ausgelöst, dass die Eltern der Komponente überwachen können. |
+| Slot | - | Ja | - | Dieser Slot übergibt das Icon des Headers an die Komponente. |
+
+<br/><br/>
+
 ### AppSidebarHeaderSmall
+Diese Komponente wurde begonnen, aber noch nicht fertig gestellt (da wir uns für den AppSidebarHeader entschieden haben).
+
+<br/><br/>
+
 ### AppTaskList
+@Jonas
+
+<br/><br/>
 
 ## Interfaces
 
