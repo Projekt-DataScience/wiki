@@ -28,6 +28,7 @@ import {AppButtonPrimary, AppButtonSecondary, AppButtonTertiary} from "./librari
 
 ### Registrieren von Komponenten
 Im Folgenden wird beschrieben, wie neue Komponenten in der Library registriert werden können.
+@Jonas
 <br/><br/>
 
 ### Inhaltsverzeichnis
