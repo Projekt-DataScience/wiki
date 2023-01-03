@@ -1,5 +1,8 @@
+# Inhaltsverzeichnis
+Hier Inhalt
+
 # Technologien
-Raphi
+Raphi hier auch ressourcen? oder extern?
 
 # Architektur
 ![Image of Architecture](images/frontend_abstract_architecture.png)
