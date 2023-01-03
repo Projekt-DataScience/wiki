@@ -84,6 +84,7 @@ Die letzten Komponenten des Designsystems, die sich keiner Kategorie eindeutig z
 Der AppButtonAdd ist ein spezieller Button, der für das Hinzufügen von neuen Inhalten verwendet wird. Auf der Configuration Page wird er beispielsweise eingesetzt, um neue Geplante Audits zu erstellen.
 
 <br/><br/>
+
 **Aktionen:**
 
 | Typ | Name | Pflicht | Standardwert | Beschreibung |
@@ -97,6 +98,7 @@ Der AppButtonAdd ist ein spezieller Button, der für das Hinzufügen von neuen I
 Der AppButtonNotification ist ein spezieller Button, der einen Popup mit aktuellen Aufgaben öffnet. Er zeigt außerdem als Label an, wie viele offene Aufgaben es aktuell gibt.
 
 <br/><br/>
+
 **Aktionen:**
 
 Die Komponente verfügt über keine Aktionen.
@@ -107,6 +109,7 @@ Die Komponente verfügt über keine Aktionen.
 Der AppButtonOption ist der Button, der für Einstellungen in Containern und Listen verwendet wird. Über ihn können beispielsweise Elemente gelöscht oder bearbeitet werden. In der ersten Phase der Roadmap haben wir allerdings nur den Button umgesetzt und noch keine Einstellmöglichkeiten hinterlegt.
 
 <br/><br/>
+
 **Aktionen:**
 
 | Typ | Name | Pflicht | Standardwert | Beschreibung |
@@ -120,6 +123,7 @@ Der AppButtonOption ist der Button, der für Einstellungen in Containern und Lis
 Der AppButtonPrimary ist der Primary Button des Designsystems und wird für die wichtigsten Call to Actions verwendet. Dadurch kann eine Button Hierarchie auf der Seite oder in der Komponente etabliert werden.
 
 <br/><br/>
+
 **Aktionen:**
 
 | Typ | Name | Pflicht | Standardwert | Beschreibung |
@@ -135,6 +139,7 @@ Der AppButtonPrimary ist der Primary Button des Designsystems und wird für die 
 Der AppButtonProfile ist ein spezieller Button, der einen Popup mit den wichtigsten Einstellmöglichkeiten für das Profil öffnet.
 
 <br/><br/>
+
 **Aktionen:**
 
 Die Komponente verfügt über keine Aktionen.
@@ -145,6 +150,7 @@ Die Komponente verfügt über keine Aktionen.
 Der AppButtonSecondary wird für die zweitwichtigsten Call to Actions verwendet. Dadurch kann eine Button Hierarchie auf der Seite oder in der Komponente etabliert werden.
 
 <br/><br/>
+
 **Aktionen:**
 
 | Typ | Name | Pflicht | Standardwert | Beschreibung |
@@ -158,6 +164,7 @@ Der AppButtonSecondary wird für die zweitwichtigsten Call to Actions verwendet.
 Der AppButtonTertiary wird für die drittwichtigsten Call to Actions verwendet. Dadurch kann eine Button Hierarchie auf der Seite oder in der Komponente etabliert werden.
 
 <br/><br/>
+
 **Aktionen:**
 
 | Typ | Name | Pflicht | Standardwert | Beschreibung |
@@ -182,6 +189,7 @@ Die Komponente verfügt über keine Aktionen.
 Der AppContainer ist die standardmäßige Kachel des Designsystems. Sie wird beispielsweise auf der LPA Startseite verwendet für die Offenen Audits. Sie benötigt immer den Content-Slot und optional einen Header und Footer Slot. Wenn kein Header-Slot angegeben wird, wird der ContainerName Prop angezeigt.
 
 <br/><br/>
+
 **Aktionen:**
 
 | Typ | Name | Pflicht | Standardwert | Beschreibung |
@@ -190,12 +198,14 @@ Der AppContainer ist die standardmäßige Kachel des Designsystems. Sie wird bei
 | Slot | header | - | - | Der Header Slot kann optional statt dem containerName als Header des Containers angezeigt werden. So kann beispielsweise neben dem Titel auch ein Button angezeigt werden. |
 | Slot | content | Ja | - | Der Inhalt des Containers. |
 | Slot | footer | - | - | Der Footer des Containers. Kann beispielsweise für eine Pagination verwendet werden. |
+
 <br/><br/>
 
 ### AppIconLibrary
 Die aktuelle IconLibrary wird über die Komponente AppIconLibrary realisiert. Durch sie kann sowohl das Styling der Icons angepasst werden als auch Icons dynamisch anhand des icon Props gerendert werden. Ein Beispiel hierfür ist die Main-Dashboard Seite. Hier werden die Applikationen anhand der Informationen aus dem Store dynamisch gerendert.
 
 <br/><br/>
+
 **Aktionen:**
 
 | Typ | Name | Pflicht | Standardwert | Beschreibung |
@@ -203,6 +213,7 @@ Die aktuelle IconLibrary wird über die Komponente AppIconLibrary realisiert. Du
 | Prop | icon | Ja | - | Über diesen Prop wird bestimmt, welches Icon angezeigt wird. Ein Beispiel ist der Name "lpa", der das LPA Logo rendert. |
 | Prop | styling | Nein | - | Mithilfe dieses Props können TailwindCSS Klassen übergeben werden, die das Aussehen des Buttons festlegen. Beispielsweise die Farbe, Ausrichtung und Größe. |
 | Prop | type | Nein | - | Der Type wird nur für manche Icons verwendet und legt fest, wie die Icons aussehen. Beispielsweise kann so die Checkbox entweder "active" oder "inactive" gerendert werden. |
+
 <br/><br/>
 
 **Übersicht über die Icons:**<br/>
@@ -212,13 +223,16 @@ Alle Icons mit ihrem Namen und möglichen Type Props.
 
 **Neues Icon hinzufügen:**<br/>
 Als erstes wird ein neuer `div`-Tags eingefügt, der den Namen des Icons als if-Abfrage beinhaltet.
+
 ```html
 <div v-if="icon === 'history'">
     <!--Insert SVG-->
 </div>
 ```
 <br/><br/>
+
 Dann wird der SVG Code des Icons kopiert und in den `div`-Tags eingefügt.
+
 ```html
 <div v-if="icon === 'history'">
     <svg
@@ -259,6 +273,7 @@ Dann wird der SVG Code des Icons kopiert und in den `div`-Tags eingefügt.
 <br/><br/>
 
 Anschließend werden die Klassen des SVG-Icons an die TailwindCSS Klassen angepasst und der Styling Prop hinzugefügt.
+
 ```html
 <div v-if="icon === 'history'">
     <svg
@@ -304,6 +319,7 @@ Anschließend werden die Klassen des SVG-Icons an die TailwindCSS Klassen angepa
 Die AppInputBigTextField-Komponente wird verwendet, wenn ein langer Text in das Input Feld eingegeben werden soll. Ein Beispiel ist der Kommentar beim Durchführen eines Audits.
 
 <br/><br/>
+
 **Aktionen:**
 
 | Typ | Name | Pflicht | Standardwert | Beschreibung |
@@ -312,6 +328,7 @@ Die AppInputBigTextField-Komponente wird verwendet, wenn ein langer Text in das 
 | Prop | name | Ja | - | Mit diesem Prop kann der Name der Textarea definiert werden. |
 | Prop | text | Ja | - | Diese Prop übergibt den aktuellen Inhalt des Textes aus der Elternkomponente oder -seite. |
 | Emit | input | - | - | Beim Klicken des Buttons wird ein Event ausgelöst, dass die Eltern der Komponente überwachen können. Zusätzlich wird auch als Parameter der aktuelle Inhalt des Textfeldes übergeben. |
+
 <br/><br/>
 
 
@@ -319,6 +336,7 @@ Die AppInputBigTextField-Komponente wird verwendet, wenn ein langer Text in das 
 Die AppInputDropdown-Komponente wird verwendet, wenn ein Dropdown-Item im Input Feld ausgewählt werden soll. Ein Beispiel ist der Kommentar beim Durchführen eines Audits.
 
 <br/><br/>
+
 **Aktionen:**
 
 | Typ | Name | Pflicht | Standardwert | Beschreibung |
@@ -329,6 +347,7 @@ Die AppInputDropdown-Komponente wird verwendet, wenn ein Dropdown-Item im Input 
 | Prop | initialOption | Nein | - | Dieser Prop kann verwendet werden, um den initialen Inhalt des DropDowns festzulegen. Diese Option wird angezeigt, wenn noch kein Inhalt ausgewählt wurde. Beispielsweise kann als String `"-- Grund auswählen --"` übergeben werden. |
 | Prop | currentValue | Ja | - | Diese Prop beinhaltet als String die ID des Array-Items, dass aktuell ausgewählt wurde. Wenn noch kein Wert ausgewählt wurde, muss `"null"` als String übergeben werden.  |
 | Emit | input | - | - | Beim Klicken des Buttons wird ein Event ausgelöst, dass die Eltern der Komponente überwachen können. Zusätzlich wird auch als Parameter die ID des aktuell ausgewählten Inhalts des Dropdowns übergeben. |
+
 <br/><br/>
 
 ### AppInputTextField
