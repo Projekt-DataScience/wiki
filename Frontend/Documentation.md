@@ -1,27 +1,104 @@
 # Inhaltsverzeichnis
-Hier Inhalt
+- [Technologien](#technologien)
+- [Ressourcen](#ressourcen)
+- [Architektur](#architektur)
+  - [Ordnerstruktur](#ordnerstruktur)
+  - [Namensstruktur](#namensstruktur)
+  - [Modulare Architektur](#modulare-architektur)
+- [Verzeichnisse](#verzeichnisse)
+  - [Assets](#assets)
+  - [Libraries](#libraries)
+    - [Components](#app-components)
+    - [Interfaces](#app-interfaces)
+    - [Mixins](#app-mixins)
+    - [Services](#app-services)
+    - [Stores](#app-stores)
+  - [Modules/LPA](#lpa-module)
+    - [Components](#lpa-components)
+    - [Interfaces](#lpa-interfaces)
+    - [Router](#lpa-router)
+    - [Stores](#lpa-stores)
+    - [Views](#lpa-views)
+  - [Modules/Main](#main-module)
+    - [Components](#main-components)
+    - [Interfaces](#main-interfaces)
+    - [Router](#main-router)
+    - [Stores](#main-stores)
+    - [Views](#main-views)
+  - [Router](#übergeordneter-router)
+- [Roadmap](#roadmap)
+
+<br/><br/>
 
 # Technologien
-Raphi hier auch ressourcen? oder extern?
+Wie haben die folgenden Technologien für unseren Frontend-Stack ausgewählt.
+
+<br/><br/>
+
+## Vite
+
+<br/><br/>
+
+## VueJS
+VueJS
+
+<br/><br/>
+
+## Typescript
+
+<br/><br/>
+
+## TailwindCSS
+
+<br/><br/>
+
+## ApexCharts
+
+<br/><br/>
+
+# Ressourcen
+Gute Links und Quellen, um sich in die Architektur und die Technologien einzuarbeiten.
+
+<br/><br/>
 
 # Architektur
+Die folgende Architektur soll das Frontend sinnvoll für ein größeres Projekt strukturieren und so die Erweiterbarkeit und Übersichtlichkeit erhöhen. Dazu wird neben der Architektur auch die verwendete Ordnerstruktur vorgestellt und einige Namenskonventionen festgelegt.
+
+<br/><br/>
+
+## Ordnerstruktur
+Die Ordnerstruktur soll sich stark an der Standardstruktur für Vue/CLI generierte Projekte orientieren. Dadurch ist das Projekt leichter nachvollziehbar.
+* `assets` Enthält notwendige Dateien wie Bilder
+* `components` Enthält sinnvolle Komponenten für eine gute Wiederverwendbarkeit
+* `router` Enthält die Seitennavigation
+* `store` Enthält seitenübergreifende Daten
+* `views` Enthält die Seiten
+
+<br/><br/>
+
+## Namensstruktur
+Raphi
+
+<br/><br/>
+
+## Modulare Architektur
+
 ![Image of Architecture](images/frontend_abstract_architecture.png)
 
+<br/><br/>
 
-# Ordnerstruktur
-Raphi
+### Module registrieren
 
-# Namenskonvention
-Raphi
+<br/><br/>
 
 # Assets
 In den Assets werden derzeit alle verwendeten Icons und Bilder gespeichert.
-Die Icons sind in der entsprechenden Library eingefügt und sind nur für den Wiedergebrauch zusätzlich abgelegt.
-Das Login-Bild sollte in Zukunft aus dem Backend kommen und kann auf die nutzende Firma angepasst werden.
+Die Icons sind in der entsprechenden Library eingefügt und sind nur für den Wiedergebrauch zusätzlich abgelegt. Das Login-Bild sollte in Zukunft aus dem Backend kommen und kann auf die nutzende Firma angepasst werden.
+
 <br/><br/>
 
 # Libraries
-## Components
+## App Components
 ### Import von Komponenten
 Mit dem folgenden Import können die einzelnen Komponenten aus der übergeordneten Library in den Komponenten und Seiten der Module installiert werden. Im Anschluss werden die Funktionen der einzelnen Komponenten und ihre `Props` und `Emits` näher beschrieben.
 ```ts
@@ -533,37 +610,37 @@ Diese Komponente wurde begonnen, aber noch nicht fertig gestellt (da wir uns fü
 
 <br/><br/>
 
-## Interfaces
+## App Interfaces
 
-## Mixins
+## App Mixins
 
-## Services
+## App Services
 
-## Stores
+## App Stores
 
 # Modules
 
-## LPA
-### Components
+## LPA Module
+### LPA Components
 #### LPADashboard
 
-### Interfaces
+### LPA Interfaces
 
-### Router
+### LPA Router
 
-### Stores
+### LPA Stores
 
-### Views
+### LPA Views
 
-## Main
+## Main Module
 
-### Components
+### Main Components
 
-### Router
+### Main Router
 
-### Stores
+### Main Stores
 
-### Views
+### Main Views
 
-# Router
+# Übergeordneter Router
 
