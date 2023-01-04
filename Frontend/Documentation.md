@@ -13,13 +13,13 @@
     - [Mixins](#app-mixins)
     - [Services](#app-services)
     - [Stores](#app-stores)
-  - [Modules/LPA](#lpa-module)
+  - [Modules/LPA](#moduleslpa-module)
     - [Components](#lpa-components)
     - [Interfaces](#lpa-interfaces)
     - [Router](#lpa-router)
     - [Stores](#lpa-stores)
     - [Views](#lpa-views)
-  - [Modules/Main](#main-module)
+  - [Modules/Main](#modulesmain-module)
     - [Components](#main-components)
     - [Interfaces](#main-interfaces)
     - [Router](#main-router)
@@ -91,26 +91,28 @@ Raphi
 
 <br/><br/>
 
-# Assets
+# Verzeichnisse
+
+## Assets
 In den Assets werden derzeit alle verwendeten Icons und Bilder gespeichert.
 Die Icons sind in der entsprechenden Library eingefügt und sind nur für den Wiedergebrauch zusätzlich abgelegt. Das Login-Bild sollte in Zukunft aus dem Backend kommen und kann auf die nutzende Firma angepasst werden.
 
 <br/><br/>
 
-# Libraries
-## App Components
-### Import von Komponenten
+## Libraries
+### App Components
+#### Import von Komponenten
 Mit dem folgenden Import können die einzelnen Komponenten aus der übergeordneten Library in den Komponenten und Seiten der Module installiert werden. Im Anschluss werden die Funktionen der einzelnen Komponenten und ihre `Props` und `Emits` näher beschrieben.
 ```ts
 import {AppButtonPrimary, AppButtonSecondary, AppButtonTertiary} from "./libraries/components"
 ```
 <br/><br/>
 
-### Registrieren von Komponenten
+#### Registrieren von Komponenten
 Im Folgenden wird beschrieben, wie neue Komponenten in der Library registriert werden können.
 <br/><br/>
 
-### Inhaltsverzeichnis
+#### Inhaltsverzeichnis
 **Button**<br />
 Ein Button ist eine Komponente, die eine Call to Action (oder einen Link, aber das sollte vermieden werden) definiert.
 - [AppButtonOption](#appbuttonoption)
@@ -160,7 +162,7 @@ Die letzten Komponenten des Designsystems, die sich keiner Kategorie eindeutig z
 - [AppSearchAndFilterBar](#appsearchandfilterbar)
 <br/><br/>
 
-### AppButtonAdd
+#### AppButtonAdd
 Der AppButtonAdd ist ein spezieller Button, der für das Hinzufügen von neuen Inhalten verwendet wird. Auf der Configuration Page wird er beispielsweise eingesetzt, um neue Geplante Audits zu erstellen.
 
 <br/><br/>
@@ -174,7 +176,7 @@ Der AppButtonAdd ist ein spezieller Button, der für das Hinzufügen von neuen I
 
 <br/><br/>
 
-### AppButtonNotification
+#### AppButtonNotification
 Der AppButtonNotification ist ein spezieller Button, der einen Popup mit aktuellen Aufgaben öffnet. Er zeigt außerdem als Label an, wie viele offene Aufgaben es aktuell gibt.
 
 <br/><br/>
@@ -185,7 +187,7 @@ Die Komponente verfügt über keine Aktionen.
 
 <br/><br/>
 
-### AppButtonOption
+#### AppButtonOption
 Der AppButtonOption ist der Button, der für Einstellungen in Containern und Listen verwendet wird. Über ihn können beispielsweise Elemente gelöscht oder bearbeitet werden. In der ersten Phase der Roadmap haben wir allerdings nur den Button umgesetzt und noch keine Einstellmöglichkeiten hinterlegt.
 
 <br/><br/>
@@ -199,7 +201,7 @@ Der AppButtonOption ist der Button, der für Einstellungen in Containern und Lis
 
 <br/><br/>
 
-### AppButtonPrimary
+#### AppButtonPrimary
 Der AppButtonPrimary ist der Primary Button des Designsystems und wird für die wichtigsten Call to Actions verwendet. Dadurch kann eine Button Hierarchie auf der Seite oder in der Komponente etabliert werden.
 
 <br/><br/>
@@ -215,7 +217,7 @@ Der AppButtonPrimary ist der Primary Button des Designsystems und wird für die 
 
 <br/><br/>
 
-### AppButtonProfile
+#### AppButtonProfile
 Der AppButtonProfile ist ein spezieller Button, der einen Popup mit den wichtigsten Einstellmöglichkeiten für das Profil öffnet.
 
 <br/><br/>
@@ -226,7 +228,7 @@ Die Komponente verfügt über keine Aktionen.
 
 <br/><br/>
 
-### AppButtonSecondary
+#### AppButtonSecondary
 Der AppButtonSecondary wird für die zweitwichtigsten Call to Actions verwendet. Dadurch kann eine Button Hierarchie auf der Seite oder in der Komponente etabliert werden.
 
 <br/><br/>
@@ -240,7 +242,7 @@ Der AppButtonSecondary wird für die zweitwichtigsten Call to Actions verwendet.
 
 <br/><br/>
 
-### AppButtonTertiary
+#### AppButtonTertiary
 Der AppButtonTertiary wird für die drittwichtigsten Call to Actions verwendet. Dadurch kann eine Button Hierarchie auf der Seite oder in der Komponente etabliert werden.
 
 <br/><br/>
@@ -256,7 +258,7 @@ Der AppButtonTertiary wird für die drittwichtigsten Call to Actions verwendet. 
 
 <br/><br/>
 
-### AppButtonThemeToggle
+#### AppButtonThemeToggle
 Der AppButtonThemeToggle ist ein spezieller Button, der für die Einstellung des Themes verwendet wird. Mit ihm lässt sich zwischen Light- und Darkmode umschalten.
 
 <br/><br/>
@@ -265,7 +267,7 @@ Der AppButtonThemeToggle ist ein spezieller Button, der für die Einstellung des
 Die Komponente verfügt über keine Aktionen.
 <br/><br/>
 
-### AppContainer
+#### AppContainer
 Der AppContainer ist die standardmäßige Kachel des Designsystems. Sie wird beispielsweise auf der LPA Startseite verwendet für die Offenen Audits. Sie benötigt immer den Content-Slot und optional einen Header und Footer Slot. Wenn kein Header-Slot angegeben wird, wird der ContainerName Prop angezeigt.
 
 <br/><br/>
@@ -281,7 +283,7 @@ Der AppContainer ist die standardmäßige Kachel des Designsystems. Sie wird bei
 
 <br/><br/>
 
-### AppIconLibrary
+#### AppIconLibrary
 Die aktuelle IconLibrary wird über die Komponente AppIconLibrary realisiert. Durch sie kann sowohl das Styling der Icons angepasst werden als auch Icons dynamisch anhand des icon Props gerendert werden. Ein Beispiel hierfür ist die Main-Dashboard Seite. Hier werden die Applikationen anhand der Informationen aus dem Store dynamisch gerendert.
 
 <br/><br/>
@@ -395,7 +397,7 @@ Anschließend werden die Klassen des SVG-Icons an die TailwindCSS Klassen angepa
 <br/><br/>
 
 
-### AppInputBigTextField
+#### AppInputBigTextField
 Die AppInputBigTextField-Komponente wird verwendet, wenn ein langer Text in das Input Feld eingegeben werden soll. Ein Beispiel ist der Kommentar beim Durchführen eines Audits.
 
 <br/><br/>
@@ -412,7 +414,7 @@ Die AppInputBigTextField-Komponente wird verwendet, wenn ein langer Text in das 
 <br/><br/>
 
 
-### AppInputDropdown
+#### AppInputDropdown
 Die AppInputDropdown-Komponente wird verwendet, wenn ein Dropdown-Item im Input Feld ausgewählt werden soll. Ein Beispiel ist der Kommentar beim Durchführen eines Audits.
 
 <br/><br/>
@@ -430,12 +432,12 @@ Die AppInputDropdown-Komponente wird verwendet, wenn ein Dropdown-Item im Input 
 
 <br/><br/>
 
-### AppInputTextField
+#### AppInputTextField
 @Jonas
 
 <br/><br/>
 
-### AppListContainer
+#### AppListContainer
 Der AppListContainer wird für Listen verwendet und besitzt drei Spalten. Die linke und rechte Spalte sind optional, die mittlere muss übergeben werden als Slot. Die Komponente ist die Zeile einer Liste. Beispielsweise wird auf der Main Dashboard Seite für jede Zeile das App Icon in den linken Slot, den Namen in den mittleren Slot und ein Button in den rechten Slot der Listenzeile gerendert.
 
 <br/><br/>
@@ -452,7 +454,7 @@ Der AppListContainer wird für Listen verwendet und besitzt drei Spalten. Die li
 
 <br/><br/>
 
-### AppListText
+#### AppListText
 Diese Komponente ist der Text, der in den Containern und Listen verwendet wird. Sie kann auch Teil von anderen Listen Komponenten sein.
 
 <br/><br/>
@@ -465,7 +467,7 @@ Diese Komponente ist der Text, der in den Containern und Listen verwendet wird. 
 
 <br/><br/>
 
-### AppListTextAndSubtext
+#### AppListTextAndSubtext
 Die AppListTextAndSubtext kombiniert die Komponenten AppListText und AppListTextWithDividerLines. Sie wird standardmäßig für die meisten Listen verwendet und beinhaltet neben dem Haupttitel auch noch einige Parameter als Untertitel.
 
 <br/><br/>
@@ -479,7 +481,7 @@ Die AppListTextAndSubtext kombiniert die Komponenten AppListText und AppListText
 
 <br/><br/>
 
-### AppListTextWithDividerLines
+#### AppListTextWithDividerLines
 Die AppListTextWithDividerLines trennt verschiedene Inhalte mit einer blauen Trennlinie. Sie wird beispielsweise für Untertitel in den Listen verwendet. Es können aktuell Bilder-Urls, zweistufige Texte, graue Texte und schwarze Texte übergeben werden.
 
 <br/><br/>
@@ -496,7 +498,7 @@ Die AppListTextWithDividerLines trennt verschiedene Inhalte mit einer blauen Tre
 
 <br/><br/>
 
-### AppNavigationItem
+#### AppNavigationItem
 Die Komponente AppNavigationItem ist das inaktive Pendant zur Komponente AppNavigationItemActive. Beide Komponenten werden als Navigationsitems verwendet. Falls die aktuelle Seite nicht der Seite entspricht, die durch die Komponente beschrieben wird, wird die AppNavigationItem verwendet und nicht die AppNavigationItemActive. In Zukunft könnten die beiden auch in eine Komponenten mit einem isActive Prop überführt werden.
 
 <br/><br/>
@@ -512,7 +514,7 @@ Die Komponente AppNavigationItem ist das inaktive Pendant zur Komponente AppNavi
 
 <br/><br/>
 
-### AppNavigationItemActive
+#### AppNavigationItemActive
 Die Komponente AppNavigationItemActive ist das aktive Pendant zur Komponente AppNavigationItem. Beide Komponenten werden als Navigationsitems verwendet. Falls die aktuelle Seite nicht der Seite entspricht, die durch die Komponente beschrieben wird, wird die AppNavigationItem verwendet und nicht die AppNavigationItemActive. In Zukunft könnten die beiden auch in eine Komponenten mit einem isActive Prop überführt werden.
 
 <br/><br/>
@@ -527,7 +529,7 @@ Die Komponente AppNavigationItemActive ist das aktive Pendant zur Komponente App
 
 <br/><br/>
 
-### AppPageLayout
+#### AppPageLayout
 Diese Komponente wird auf jeder Seite verwendet und definiert das Layout der Seite. Sie verfügt über einen Header, eine Sidebar, eine Subsidebar und den Content Bereich, auf dem der Inhalt der Seite angezeigt wird. Sie regelt auch den Toggle zwischen der großen und kleinen Sidebar und kümmert sich auch um den Abstand der einzelnen Bereiche untereinander.
 
 <br/><br/>
@@ -543,7 +545,7 @@ Diese Komponente wird auf jeder Seite verwendet und definiert das Layout der Sei
 
 <br/><br/>
 
-### AppPopup
+#### AppPopup
 Diese Komponente rendert den Popup auf den verschiedenen Seiten.
 
 <br/><br/>
@@ -556,7 +558,7 @@ Diese Komponente rendert den Popup auf den verschiedenen Seiten.
 
 <br/><br/>
 
-### AppSearchAndFilterBar
+#### AppSearchAndFilterBar
 Die AppSearchAndFilterBar ist die typische Header Komponente für die verschiedenen Seiten. Aktuell funktioniert die Suche nicht, sie soll aber in Zukunft als Filter für die Seite fungieren.
 
 <br/><br/>
@@ -569,7 +571,7 @@ Die AppSearchAndFilterBar ist die typische Header Komponente für die verschiede
 
 <br/><br/>
 
-### AppSidebar
+#### AppSidebar
 Diese Komponente ist die übergeordnete Sidebar für alle Module. Sie besitzt einen Slot für den Header und einen Slot für die Navigation Items. Zusätzlich zeigt sie auch den DualSidebarButton an, der sowohl Einstellmöglichkeiten als auch aktuelle Aufgaben beinhaltet.
 
 <br/><br/>
@@ -584,7 +586,7 @@ Diese Komponente ist die übergeordnete Sidebar für alle Module. Sie besitzt ei
 
 <br/><br/>
 
-### AppSidebarHeader
+#### AppSidebarHeader
 Der AppSidebarHeader ist der aktuelle Header des Moduls.
 
 <br/><br/>
@@ -600,27 +602,25 @@ Der AppSidebarHeader ist der aktuelle Header des Moduls.
 
 <br/><br/>
 
-### AppSidebarHeaderSmall
+#### AppSidebarHeaderSmall
 Diese Komponente wurde begonnen, aber noch nicht fertig gestellt (da wir uns für den AppSidebarHeader entschieden haben).
 
 <br/><br/>
 
-### AppTaskList
+#### AppTaskList
 @Jonas
 
 <br/><br/>
 
-## App Interfaces
+### App Interfaces
 
-## App Mixins
+### App Mixins
 
-## App Services
+### App Services
 
-## App Stores
+### App Stores
 
-# Modules
-
-## LPA Module
+## Modules/LPA Module
 ### LPA Components
 #### LPADashboard
 
@@ -632,7 +632,7 @@ Diese Komponente wurde begonnen, aber noch nicht fertig gestellt (da wir uns fü
 
 ### LPA Views
 
-## Main Module
+## Modules/Main Module
 
 ### Main Components
 
@@ -642,5 +642,7 @@ Diese Komponente wurde begonnen, aber noch nicht fertig gestellt (da wir uns fü
 
 ### Main Views
 
-# Übergeordneter Router
+## Übergeordneter Router
+
+# Roadmap
 
