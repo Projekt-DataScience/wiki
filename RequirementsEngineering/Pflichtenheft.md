@@ -137,70 +137,7 @@ Im nachfolgenden Diagramm sind alle Use Cases, Nutzer und Beziehungen zwischen d
 
 ## Detailbeschreibung Use-Cases
 
-[...snip...]
-
-**/UC6.1/ Eigene Jahres-Stunden-Übersicht einsehen**
-
-**Übersicht**
-
-  |||
- ---------------|---------------------------------------------------------------
-  Ziel          | Einsicht in eigene Jahres-Stunden-Übersicht
-  Vorbedingung  | User ist als Mitarbeiter eingeloggt
-  Resultat      | User weiß wie viele Stunden er pro Monat im aktuellen Jahr gearbeitet hat
-  Nutzer        | Mitarbeiter
-  Auslöser      | Übersicht auswählen, unter der Funktion Zeiterfassung
-  ------------------------------------------------------------------------------
-
-**Detailbeschreibung**
-
-**Name:** Einsicht in eigene Jahres-Stunden-Übersicht
-
-**Kurzbeschreibung:** Der User hat die Möglichkeit seine eigene Jahres-Stunden-Übersicht zu sehen. Dadurch weiß er wieviel er pro Monat gearbeitet hat, wieviel er arbeiten hätte sollen und was sein Stundensaldo in dem Monat war. Für jeden Monat wird eine Box dargestellt mit diesen Daten.
-
-**Akteure:**
-* Mitarbeiter
-* Zeiterfassungsdatenbank
-
-**Auslöser:** Mitarbeiter führt das Mitarbeiterzeiterfassungsprogramm aus und geht auf Zeiterfassung
-
-**Ergebnisse:** Jahres-Stunden-Übersicht im angegebenen Jahr wird angezeigt
-
-**Eingehende Daten:**
-* Session ID
-* Mitarbeiter ID
-* Auswahl, dass der User Jahres-Stunden-Übersicht ansehen möchte
-* Das ausgewählte Jahr (kann auch ein Standardwert existieren, sodass das Jahr nicht vom User explizit angegeben werden muss)
-
-**Vorbedingung:** User ist als Mitarbeiter eingeloggt
-
-**Nachbedingung** User ist immernoch als Mitarbeiter eingeloggt; Anzeigen der Ansicht für die Jahres-Stunden-Übersicht
-
-**Essenzielle Schritte:**
-  1. Use Case Login
-  2. User klickt auf Zeiterfassung
-  3. User klickt auf Übersicht
-  4. Zeiterfassungsdatenbank gibt Jahres-Stunden-Übersicht des Mitarbeiters zurück
-  5. Jahres Stunden Übersicht wird angezeigt
-
-**Ausnahmen**
-* zu 4: Falls noch keine Jahres-Stunden-Übersicht existiert:
-  - 4a) Anzeigen, dass keine Jahres-Stunden-Übersicht existiert
-
-* zu 4: Datenbankfehler jeglicher Art
-  - 4b) Operationen abbrechen
-  - 4c) User anzeigen, dass es einen Fehler gab und dass er es noch einmal versuchen soll. Falls dieser Fehler besteht soll er einen Administrator kontaktieren
-  - 4d) Bei 2. fortsetzen
-
-**Änderungshistorie:** 
-* 01.04.2020; Korkmatik; Anwendungsfall angelegt
-
-[...snip...]
-
 ## Offene Punkte
-
-&lt; *Hier werden alle offenen Fragen gesammelt. In der Final-Version
-darf hier nichts mehr stehen!* &gt;
 
 # Produkteigenschaften
 
