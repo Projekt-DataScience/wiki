@@ -1,8 +1,7 @@
 # Architecture
 The architecture is a SOA-based architecture. For simplicity resonse we are only using one database for all services.
 
-![backend-architecture drawio](https://user-images.githubusercontent.com/39222224/210971095-8caaa0d0-a375-4302-b6a5-8ae9d03ee255.png)
-
+![backend-architecture](https://user-images.githubusercontent.com/39222224/210972045-d537a855-bdf6-49bf-bede-e39c4a8a8b1c.jpg)
 
 # Services
 
@@ -16,4 +15,6 @@ The architecture is a SOA-based architecture. For simplicity resonse we are only
 
 # Datenbankschema
 
-Siehe [backend-db-lib README](https://github.com/Projekt-DataScience/backend-db-lib/blob/main/README.md)
+See [backend-db-lib README](https://github.com/Projekt-DataScience/backend-db-lib/blob/main/README.md). 
+
+To access the database a library is used. Which can be found in [this repository](https://github.com/Projekt-DataScience/backend-db-lib).
