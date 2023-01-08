@@ -36,28 +36,92 @@ Wie haben die folgenden Technologien für unseren Frontend-Stack ausgewählt.
 <br/><br/>
 
 ## Vite
+Wir haben uns als Build Tool und Development Server für Vite entschieden, da damit die Entwicklung erheblich beschleunigt werden kann. Die Alternative dazu wäre die Vue CLI mit Webpack. Webpack hat allerdings den Nachteil, dass mit steigender Größe des Projektes auch der Entwicklungsserver immer langsamer wird und viel Zeit benötigt, um eine Änderung umzusetzen.
 
 <br/><br/>
 
-## VueJS
-VueJS
+**Vorstellung von Webpack**<br />
+Webpack ist ein Bundler, der alle Javascript-, Bild-, und CSS Dateien sammelt und zu größeren Einheiten kombiniert. Beispielsweise werden also zusammengehörende Hilfsmethoden aus verschiedenen Quelldateien in eine einzige große Javascript Datei zusammengefasst. Das verringert die Ladezeit, da statt vielen kleinen nur größere Dateien heruntergeladen werden müssen. Die Zeit, die benötigt wird um diese Bundles zu erstellen ist aber abhängig von der Anzahl der Dateien. Je größer das Projekt wird, desto länger dauert dieser Prozess. Beim Build (Production Version) ist das weniger schlimm, aber beim Entwickeln bremmst der Entwicklungsserver dadurch den Programmierer sehr aus. Wenn eine Datei geändert wird muss Webpack ganze Bundles aus vielen Dateien neu generieren.
+
+<br/><br/>
+
+**Warum wir Vite gewählt haben**<br />
+Vite besteht im Grunde aus der gleichen Idee wie Webpack. Es soll ebenfalls die Entwicklung von JavaScript Projekten in der Entwicklungsversion beschleunigt und am Ende ein Produktiv-Build generiert werden. Vite ist darin aber wesentlich besser, da es auf neue Funktionen moderner Browser setzt. Beispielsweise werden Dynamic-Imports genutzt. Hier macht das Hot Module Replacement (also das sofortige Austauschen von geänderten Komponenten, ohne das ein Refresh des Browser notwendig ist) mehr Sinn, da der Programmierer nicht so lange waren muss, bis die Änderungen aktiv sind.
+
+<br/><br/>
+
+## Vuejs 3
+Für das Erstellen von grafischen Oberflächen für Webanwendungen gibt es vor allem drei etablierte Frameworks. Angular, React und Vuejs. Neben diesen drei gibt es auch einige neue, modernere Ansätze wie Svelte und Solid. Diese sind allerdings aktuell noch in der Entstehungsphase und sind deshalb weniger geeignet für größere Webprojekte. Es gibt noch wenige Libraries und Hilfestellungen und deshalb haben wir uns gegen diese Frameworks entschieden. Zwischen Angular, React und Vuejs ist diese Entscheidung weniger einfach zu fällen. Letztendlich haben wir uns aber für Vuejs entschieden.
+
+<br/><br/>
+
+**Vergleich von Angular, React und Vuejs**<br />
+Vuejs ist ein progressives Framework zur Entwicklung von grafischen Oberflächen. Progressiv bedeutet, dass man in Vuejs sehr klein starten kann. Man fügt erst einen kleinen Teil in ein Projekt ein und dieser kann dann organisch zu etwas immer größeren heranwachsen. React dagegen ist vergleichbar mit einer UI Library und Angular ist ein älteres, vollumfängliches Frontend-Framework.
+
+<br/><br/>
+
+| Kriterium | Angular | React | Vuejs |
+|-----------------|-----------------|-----------------|-----------------|
+| Architektur | Das originale Framework folgt dem MVC-Muster. In Angular 2 wurde diese strikte Architektur aber aufgeweicht und es kann ebenfalls komponentenbasiert gearbeitet werden. Projekte in Angular sind strukturiert nach Modules, Components und Services.  | React gibt keine spezielle Projektstruktur vor. Es kann auch als UI Library verwendet werden, um Elemente zu rendern und ist deshalb nicht zwingend ein striktes Framework. React ist in Elements und Components strukturiert. | Vuejs fokussiert sich nur auf die Views (Seiten). Als progressives Framework kann es dann erweitert werden zu einem vollumfänglichen Framework mit beispielsweise Vue Router zur Seitennavigation oder Vuex als Store zur seitenübergreifenden Datenhaltung. Darüber hinaus können auch Components definiert werden, die die Seiten aufbauen. Vuejs ist inspiriert nach dem MVVM-Muster. |
+| Beliebtheit | Angular hat am wenigsten Sterne auf Github (über 60k) und wird von Google entwickelt. Es wird häufig in Unternehmensprojekten verwendet, allerdings nicht in einem der eigenen Flagschiffe von Google selbst. Angular ist das älteste Framework unter den dreien. | React ist eines der beliebtesten JavaScript Frameworks überhaupt (mit über 160k Sternen auf Github) und wird entwickelt und gepflegt von Facebook. Es wird intern bei Facebook für viele Produkte verwendet und ist vermutlich das am meisten genutze Framework unter den dreien. | Vuejs hat die meisten Sterne auf Github (über 170k) und ist ein freies und unabhängig entwickeltes Framework. Es wird von Evan You geführt, der zuvor bei Google an Angular mitgearbeitet hat. Es wird häufig in Projekten verwendet und wächst an Popularität. |
+| Ökosystem | Durch die Etabliertheit von Angular gibt es wie auch bei React und Vuejs viele fertige Libraries. Es gibt beispielsweise auch offizielle Libraries von Google, die das Material Desing unterstützen. | Durch die Beliebtheit von React ist es nicht schwer, fertig nutzbare Libraries zu finden. Das Ecosystem von React umfasst auch React Native. Dieses erlaubt das Entwickeln von Android und IOS Projekten aus einer einzigen React Codebasis heraus. | Mittlerweile gibt es auch bei Vuejs viele fertige Libraries, die Entwicklunszeiten erheblich verkürzen können. Teilweise sind diese auch durch das Team hinter Vuejs erstellt worden und erweitern die Funktionalitäten des Progressive Frameworks. Darunter sind vor allem Vue Router, Vuex und Piniajs zu nennen. |
+| Performance | Im Vergleich zu React und Vuejs ist Angular etwas langsamer. | React und Vuejs sind sehr vergleichbar bei der Performance. | React und Vuejs sind sehr vergleichbar bei der Performance. |
+| Lernkurve | Angular hat unter den Dreien die komplexeste Projektstruktur. Da es ein vollständiges Frontend-Framework ist, ist es auch von mehr Konzepten abhängig. Darüber hinaus funktioniert Angular am Besten mit Typescript, was die Lernkurve auch erhöht. Darüber hinaus hat es eine ähnliche HTML Syntax wie auch Vuejs. Mit dieser muss man sich als Entwickler zuerst vertraut machen, danach ist diese aber sehr intuitiv. | In der einfachsten Version ist React am einfachsten zu lernen unter den Dreien, da es in diesem Fall nur eine UI Library ist. Allerdings verwenden viele Entwickler JSX, was die Lernkurve enorm erhöht. React basiert zwar auf JavaScript, wird aber meistens mit JSX (Javascript XML) kombiniert. | Das Aufsetzen von Vuejs ist etwas komplexer als bei React. Vuejs setzt wie Angular auf eine HTML Syntax die zuvor gelernt werden muss. Darüber hinaus ist aber die Syntax und der Projektaufbau von Vuejs einfacher und intuitiver für viele Entwickler. Deshalb hat Vuejs vermutlich die geringste Lernkurve. |
+| Zukunftsvorhersage | Angular ist nach wie vor ein sehr beliebtes Projekt und wird nach wie vor in neuen Versionen weiterentwickelt. Es ist damit sehr unwahrscheinlich, dass es in naher Zukunft nicht mehr weitergepflegt wird. | React wurde am meisten heruntergeladen und ist damit sehr beliebt. Es wird aktiv weiterentwickelt und neue Versionen veröffentlicht. Das macht es sehr unwahrscheinlich, dass React in naher Zukunft nicht mehr weitergepflegt wird. | Mit Vuejs 3 wurden viele nützliche Funktionen aus React übernommen und das Framework wurde komplett in Typescript überarbeitet. Dadurch eignet es sich mittlerweile noch besser für große Projekte. Es wird in regelmäßigen Updates weiterentwickelt, ist beliebt und hat eine starke Community hinter sich. Das macht es sehr unwahrscheinlich, dass Vuejs in naher Zukunft nicht mehr weitergepflegt wird. Darüber hinaus wird es immer populärer und könnte bald Angular bei den Downloadzahlen überholen. |
+
+<br/><br/>
+
+**Warum wir Vuejs gewählt haben**<br />
+Aus der Tabelle ist vor allem ersichtlich, dass diese drei Frameworks fast auf Augenhöhe sind und jedes der drei seine eigenen Vorteile hat. Alle drei Projekte werden sehr aktiv weiterentwickelt. Der Support ist bei allen dreien sehr hoch und man kann sowohl Angular, als auch React oder Vuejs sicher auswählen in großen und kleinen Projekten. Bevor man eines der Frameworks wählt muss man sich verschiedene Fragen stellen. Zum einen die Erfahrung des Entwicklerteams, zum anderen verfügbare Entwickler, die eingestellt werden könnten und nicht zuletzt die Art und Komplexität des Projektes, dass umgesetzt werden soll. Schlussendlich war für uns vor allem entscheidend, dass Vuejs aktuell immer mehr an Popularität gewinnt und wir uns bereits teilweise mit der Entwicklung von Vuejs Projekten auskannten. Vuejs ist einfach zu erlernen und kann allen unseren Anforderungen an die von HWH geplanten Plattform gerecht werden. Darüber hinaus haben wir uns für Vue Router zur Seitennavigation und Piniajs als Store entschieden.
+
+<br/><br/>
+
+## Piniajs
+Wir haben uns zur Seiten- und Komponentenübergreifenden Datenhaltung gegen den Vuex Store und für Piniajs entschieden. Piniajs ist eine relativ neue Library und wird als die Weiterentwicklung von Vuex angesehen. Darüber hinaus konnte mit Piniajs die modulare Architektur der Anwendung einfacher umgesetzt werden. Pinia ist intuitiv zu nutzen und macht die Nutzung des Stores so einfach wie die Nutzung von Komponenten. Es wurde von Grund auf so aufgebaut, dass es modular verwendet werden kann beliebig erweitert werden um Konzepte wie Local Storage, Transaktionen oder Synchronisation. Pinijs ist ein kostenloses Open-Source-Framework das aktiv von Mitgliedern des Vuejs Core Teams weiterentwickelt wird. Das macht es sehr unwahrscheinlich, dass es in naher Zukunft nicht mehr weitergepflegt wird. Aus diesen Gründen haben wir uns für Piniajs entschieden.
 
 <br/><br/>
 
 ## Typescript
+Typescript ist eine kostenlose Erweiterung von Javascript und ergänzt dieses um ein statisches Typsystem. Dieses kann dazu beitragen, viele potenzielle Laufzeitfehler zu vermeiden. Das ist besonders dann hilfreich, wenn eine größere Applikation gebaut werden soll, an der viele verschiedene Entwickler arbeiten. Vue 3 ist standardmäßig bereits in Typescript geschrieben, ebenso wie Vue Router und Piniajs. Damit wird eine Typescript Entwicklung bestmöglich unterstützt. Aus diesen Gründen haben wir uns für die Verwendung von Typescript im Rahmen der Entwicklung der HWH Plattform entschieden. Typescript ist ein kostenloses Open-Source-Projekt und wird von Microsoft aktiv weiterentwickelt und gepflegt. Es ist ein sehr beliebtes Projekt und Javascript ist eine der populärsten Programmiersprachen, was es sehr unwahrscheinlich macht, dass es in naher Zukunft nicht mehr weitergepflegt wird.
 
 <br/><br/>
 
 ## TailwindCSS
+Ein UI-Framework kann die Entwicklungszeit einer Webapplikation erheblich beschleunigen, da fertige Komponenten und Styles verwendet werden können. Ein Beispiel hierfür ist das populäre Bootstrap. Dieses setzt aber auf fertig gestylte Komponenten. TailwindCSS dagegen ist ein Utility-First CSS Framework, dass sich lediglich um das Aussehen kümmert und sich gut für größere Projekte eignet. Je mehr ein Projekt wächst, desto schwieriger wird es, das Aussehen mit CSS zu organisieren. Die Performance einer oder vieler großer CSS Dateien ist schlecht und es ist nach einer Weile als Entwickler schwer nachzuvollziehen, was die einzelnen Klassen bedeuten. Besonders, wenn wir diese nicht selbst geschrieben haben. Hier versucht TailwindCSS Abhilfe zu schaffen. Der Programmierer muss sich keine Gedanken über sinnvolle Klassennamen machen und das geschriebene CSS wird auch nicht größer. Stattdessen werden fertig definierte Klassen von Tailwind genutzt. Darüber hinaus erleichtert Tailwind auch das Responsive Design, den Darkmode oder die Verwendung von States wie Hover. TailwindCSS verfolgt eine neue CSS Architektur, bei der auf einen komponierbaren Ansatz gesetzt wird. Man kann die einzelnen atomaren Klassen nahezu beliebig kombinieren und so jede gewünschte Funktionalität erreichen. Dabei ist entwicklerfreundlich direkt im HTML Code erkennbar, welche Klassen auf welches Element wirken. Beim Erstellen des Builds wird aber nur das CSS ausgeliefert, was auch tatsächlich verwendet wurde. So wird die Dateigröße von TailwindCSS im Vergleich mit vielen anderen CSS Bibliotheken nochmals reduziert. Darüber hinaus ist das kostenlose Open-Source-Framework sehr beliebt, wird regelmäßig weiterentwickelt und aktiv gepflegt. Das macht es sehr unwahrscheinlich, dass es in naher Zukunft nicht mehr weitergepflegt wird. Aus diesen Gründen haben wir uns für TailwindCSS entschieden.
 
 <br/><br/>
 
 ## ApexCharts
+Für die Erstellung von grafischen Analysen gibt es verschiedene Libraries. Wir haben einige verglichen und uns schlussendlich für ApexCharts entschieden. Dieses kann die Anforderungen an die HWH Plattform am besten umsetzen. Einige der Vorteile dieser Bibliothek sind die große Anzahl verschiedener Auswertungstypen, die hohe Personalisierbarkeit und das Responsive Design der Komponenten. ApexCharts kann sowohl in Angular, als auch React und Vuejs verwendet werden, es ist kostenlos und ein beliebtes Open-Source-Projekt. Darüber hinaus wird es auch durch neue Releases weiterenwickelt und wird aktiv gepflegt. Das macht es sehr unwahrscheinlich, dass ApexCharts in naher Zukunft nicht mehr weitergepflegt wird. Aus diesen Gründne haben wir uns für ApexCharts entschieden.
 
 <br/><br/>
 
 # Ressourcen
 Gute Links und Quellen, um sich in die Architektur und die Technologien einzuarbeiten.
+
+<br/><br/>
+
+## Vuejs 3
+* Eine gute Anlaufstelle ist die offizielle und gut gepflegte [Dokumentation](https://vuejs.org/guide/introduction.html) von Vuejs
+* Hilfreich sind auch die kurzen [Anleitungen](https://vueschool.io/) und Videos der Vue School
+* [Tipps](https://vueschool.io/articles/vuejs-tutorials/how-to-structure-a-large-scale-vue-js-application/) für große Vuejs Projekte
+* [Artikel](https://athemes.com/guides/angular-vs-react-vs-vue/) zu den Unterschieden zwischen Vuejs, Angular und React
+* Dokumentation zu [Vue Router](https://router.vuejs.org/) und [Piniajs](https://pinia.vuejs.org/)
+* [Artikel](https://www.heise.de/hintergrund/Vite-js-Rasantes-Build-Tool-aus-der-Vue-js-Schmiede-5060920.html?seite=all) mit Gründen für Vite und [Dokumentation](https://vitejs.dev/guide/why.html) von Vite
+
+<br/><br/>
+
+## TailwindCSS
+* Hilfreiche [Dokumentation](https://tailwindcss.com/docs/installation) zu TailwindCSS und CSS Klassen
+* Fertige [UI-Komponenten](https://tailwindui.com/components) für Vuejs von TailwindCSS
+* [Video](https://www.youtube.com/watch?v=oMOe_32M6ss) mit Informationen zum Darkmode von TailwindCSS
+
+<br/><br/>
+
+## Weitere Links
+* [Buch](https://books.google.de/books/about/Layered_Process_Audit_LPA.html?id=5bhPAgAAQBAJ&redir_esc=y) und [Website](https://www.qz-online.de/a/grundlagenartikel/layered-process-audit-316817) mit Informationen zu Layered Process Audits
+* Offizielle [Dokumentation](https://www.youtube.com/watch?v=iuyzO2QkY7A) mit nützlichen Informationen zu ApexCharts
+* [Video](https://www.youtube.com/watch?v=iuyzO2QkY7A) mit einem Beispiel zur modularen Architektur
 
 <br/><br/>
 
@@ -67,27 +131,118 @@ Die folgende Architektur soll das Frontend sinnvoll für ein größeres Projekt 
 <br/><br/>
 
 ## Ordnerstruktur
-Die Ordnerstruktur soll sich stark an der Standardstruktur für Vue/CLI generierte Projekte orientieren. Dadurch ist das Projekt leichter nachvollziehbar.
+Wenn es um Projektstandards geht, muss die Ordnerstruktur sinnvoll gewählt werden. Die Ordnerstruktur sollte sich stark an der Standardstruktur für Vue/CLI generierte Projekte orientieren. Dadurch ist das Projekt leichter nachvollziehbar und jeder Vuejs Entwickler versteht sofort den grundsätzlichen Aufbau der Anwendung. Darüber hinaus gibt es aber keine offiziell empfohlene oder vorgeschriebene Struktur. Darüber hinaus gibt es auch einige Ergänzungen und Abweichungen, die gut abgewägt werden müssen aber im Einzelfall durchaus Sinn machen. Denn mit dieser Struktur haben wir einen vorhersagbaren Ort für Seiten, Anwendungsressourcen, Routen, Komponenten und die Speicherlogik. Diese Struktur bietet dadurch einen klaren Einstiegspunkt und deshalb sollte man weder in kleinen noch großen Projekten zu sehr abweichen.
+
+<br/><br/>
+
+Ein typisches Vuejs 3 Projekt sieht wie folgt aus:
 * `assets` Enthält notwendige Dateien wie Bilder
 * `components` Enthält sinnvolle Komponenten für eine gute Wiederverwendbarkeit
 * `router` Enthält die Seitennavigation
-* `store` Enthält seitenübergreifende Daten
+* `stores` Enthält seitenübergreifende Daten
 * `views` Enthält die Seiten
 
 <br/><br/>
 
+Darüber hinaus sind noch die folgenden Verzeichnisse sinnvoll:
+* `interfaces` Enthält Interfaces für die Arbeit mit Typescript Typen
+* `mixins` Enthält wiederverwendbare Javascript Funktionen
+* `services` Enthält bei uns Javascript Klassen wie den Login oder den Timer
+
+<br/><br/>
+
+Die tatsächliche Verzeichnisstruktur, die sich durch die modulare Architektur ergeben hat, wurde [hier](#verzeichnisse) näher beschrieben.
+
+
+<br/><br/>
+
 ## Namensstruktur
-Raphi
+Neben der Ordnerstruktur ist inbesondere auch eine gute Namenskonvention für ein großes Vuejs Projekt wichtig. Dazu wurden die Empfehlungen des Vuejs [Styleguides](https://vuejs.org/guide/introduction.html) berücksichtigt. Der Styleguide enthält eine Reihe von Standards und Empfehlungen, die helfen, dass das Projekt vorhersehbarer und damit besser verständlich für die Vuejs-Community wird.
+
+<br/><br/>
+
+Konventionen für die Komponenten:
+* Jede Komponente sollte nach Möglichkeit in einer eigenen dedizierten Datei definiert werden
+* Einzeldateikomponenten sollten in PascalCase benannt werden
+* Basiskomponenten sollten alle mit dem gleichen Präfix beginnen (Basiskomponenten sind globale Komponenten wie eine Sidebar oder ein Header)
+* Komponentennamen sollten mehrsprachig benannt werden, um Konflikte mit HTML-Elementen zu vermeiden (beispielsweise sollte die Komponente nicht nur `TableHeader` heißen)
+* Einzelinstanzkomponenten sollten mit einem Präfix wie `the` beginnen um Konflikte zu vermeiden wie zum Beispiel `TheHeader`. Damit werden sie zusammengefasst und ihr einmaliger Gebrauch hervorgehoben
+* Verwandte untergeordnete Komponenten sollten mit dem Namen ihrer übergeordneten Komponente beginnen. Dadurch werden sie gruppiert und als verwandt hervorgehoben wie `ToDoListItem`
+* Komponenten solten mit der obersten Ebene, also dem Allgemeinsten beginnen und mit dem spezifischtem enden wie `AppSearchBarListSearchWidget`
+
+<br/><br/>
+
+Da wir eine modulare Architektur für die Anwendung gewählt haben, sollten die Dateien der zugehörigen Komponenten und Seiten mit einem eindeutigen Präfix benannt werden:
+* `App` für alle globalen Komponenten
+* `LPA` für die Seiten und Komponenten des LPA-Moduls
+* `Main` für die Seiten und Komponenten des Main-Moduls
 
 <br/><br/>
 
 ## Modulare Architektur
+Für die Anforderungen an die HWH Plattform eignet sich am besten eine Modulare Architektur. Die einzelnen Applikationen könnten nach und nach als neue Module in einer übergeordneten Plattform registriert werden. Zur besseren Übersichtlichkeit in der Projektstruktur haben wir allerdings diese "übergeordnete" Seite als ein weiteres Modul (das Modul Main) angesehen. Dieses haben wir neben dem LPA-Modul bereits begonnen umzusetzen. Dadurch kann die Projektstruktur einfacher von neuen Entwicklern verstanden werden.
 
-![Image of Architecture](images/frontend_abstract_architecture.png)
+<br/><br/>
+
+![Image of Architecture](images/abstract_architecture.png)
+
+<br/><br/>
+
+Das oben gezeigte Bild stellt sie Standardarchitektur für eine Vuejs Applikation dar. Diese wurde von uns durch einen modularen Ansatz erweitert. Eine modulare Architektur ist ein Weg, wie ein komplexes Problem in kleinere und einfacher zu managende Teile unterteilt werden kann. In der Softwareentwicklung gehen damit einige Guidlines, Prinzipien und Muster einher. Wir haben unseren Ansatz im folgenden Bild visualisiert. Das LPA-Modul enthält alle Projektdateien der Layered Process Audit Applikation. Das Main-Modul enthält analog alle Dateien, die für den übergeordneten Launcher benötigt werden. Aus diesem können dann übergeordnete Konfigurationen angezeigt werden wie die Einstellungen zur Unternehmenshierarchie mit Layern, Gruppen und einem Organigramm. Außerdem können aus diesem Modul auch die anderen Module bzw. Anwendungen gestartet werden.
+
+<br/><br/>
+
+![Image of Architecture](images/frontend_modular_architecture.png)
+
+<br/><br/>
+
+Wichtig ist vor allem, dass niemals eine Kommunikation unter den Modulen stattfinden soll. Es wird lediglich die übergeordnete Library in jedem Modul importiert. Diese wurde noch nicht als seperates Repository ausgelagert und vorerst in den Ordner Library verschoben. In einer zukünftigen Version der Applikation könnte sie aber aus einem anderen Ordner importiert werden oder sogar als ein Paket bei NPM veröffentlicht werden. Die übergeordnete Library enthält neben globalen Komponenten auch Interfaces, Stores, Router und Services.
 
 <br/><br/>
 
 ### Module registrieren
+Im Folgenden wird das Registrieren von neuen Modulen erklärt. Dazu muss zunächst ein neues Modul als Ordner im `modules` Ordner angelegt werden. Dieser Modul-Ordner kann je nach Notwendigkeit alle vorstellbaren Vuejs Projektordner enthalten. Im beschriebenen Beispiel wird angenommen, dass die Folgenden benötigt werden: `router`, `views`, `components`, `stores` und `interfaces`. Als erstes wird der `router` beschrieben. Zunächst wird in `MyModule/router` die Datei `index.ts` angelegt. Diese enthält den folgenden TypeScript Code für das beispielhafte Main-Modul:
+
+```ts
+import Dashboard from '../views/MainDashboard.vue'
+import Login from '../views/Login.vue'
+
+export const mainRoutes = [
+    {
+        path: '/',
+        name: 'MainDashboard',
+        component: Dashboard,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/Login',
+        name: 'Login',
+        component: Login,
+    }
+
+]
+```
+<br/><br/>
+
+Anschließend muss der übergeordnete Router angepasst werden. Dazu muss die Datei `index.ts` im `router` Ordner bearbeitet werden. Es muss hier die erstellte Datei eingebunden werden.
+
+```ts
+import { createRouter, createWebHistory } from 'vue-router'
+import { mainRoutes } from "../modules/main/router/index";
+import { lpaRoutes } from "../modules/lpa/router/index";
+
+const routes: any[] = [
+  ...mainRoutes,
+  ...lpaRoutes,
+];
+
+...
+```
+<br/><br/>
+
+Alle Elemente bis auf den `router` können einfach als neue Datei in einem neuen Ordner angelegt werden und sind automatisch im Projekt nutzbar. Der Vuejs Projektordner `assets` kann nicht in Modulen verwendet werden. Hierzu muss der übergeordnete Ordner verwendet werden, da nur dieser freigegeben ist.
 
 <br/><br/>
 
