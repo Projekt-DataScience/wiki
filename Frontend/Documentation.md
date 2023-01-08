@@ -131,27 +131,118 @@ Die folgende Architektur soll das Frontend sinnvoll für ein größeres Projekt 
 <br/><br/>
 
 ## Ordnerstruktur
-Die Ordnerstruktur soll sich stark an der Standardstruktur für Vue/CLI generierte Projekte orientieren. Dadurch ist das Projekt leichter nachvollziehbar.
+Wenn es um Projektstandards geht, muss die Ordnerstruktur sinnvoll gewählt werden. Die Ordnerstruktur sollte sich stark an der Standardstruktur für Vue/CLI generierte Projekte orientieren. Dadurch ist das Projekt leichter nachvollziehbar und jeder Vuejs Entwickler versteht sofort den grundsätzlichen Aufbau der Anwendung. Darüber hinaus gibt es aber keine offiziell empfohlene oder vorgeschriebene Struktur. Darüber hinaus gibt es auch einige Ergänzungen und Abweichungen, die gut abgewägt werden müssen aber im Einzelfall durchaus Sinn machen. Denn mit dieser Struktur haben wir einen vorhersagbaren Ort für Seiten, Anwendungsressourcen, Routen, Komponenten und die Speicherlogik. Diese Struktur bietet dadurch einen klaren Einstiegspunkt und deshalb sollte man weder in kleinen noch großen Projekten zu sehr abweichen.
+
+<br/><br/>
+
+Ein typisches Vuejs 3 Projekt sieht wie folgt aus:
 * `assets` Enthält notwendige Dateien wie Bilder
 * `components` Enthält sinnvolle Komponenten für eine gute Wiederverwendbarkeit
 * `router` Enthält die Seitennavigation
-* `store` Enthält seitenübergreifende Daten
+* `stores` Enthält seitenübergreifende Daten
 * `views` Enthält die Seiten
 
 <br/><br/>
 
+Darüber hinaus sind noch die folgenden Verzeichnisse sinnvoll:
+* `interfaces` Enthält Interfaces für die Arbeit mit Typescript Typen
+* `mixins` Enthält wiederverwendbare Javascript Funktionen
+* `services` Enthält bei uns Javascript Klassen wie den Login oder den Timer
+
+<br/><br/>
+
+Die tatsächliche Verzeichnisstruktur, die sich durch die modulare Architektur ergeben hat, wurde [hier](#verzeichnisse) näher beschrieben.
+
+
+<br/><br/>
+
 ## Namensstruktur
-Raphi
+Neben der Ordnerstruktur ist inbesondere auch eine gute Namenskonvention für ein großes Vuejs Projekt wichtig. Dazu wurden die Empfehlungen des Vuejs [Styleguides](https://vuejs.org/guide/introduction.html) berücksichtigt. Der Styleguide enthält eine Reihe von Standards und Empfehlungen, die helfen, dass das Projekt vorhersehbarer und damit besser verständlich für die Vuejs-Community wird.
+
+<br/><br/>
+
+Konventionen für die Komponenten:
+* Jede Komponente sollte nach Möglichkeit in einer eigenen dedizierten Datei definiert werden
+* Einzeldateikomponenten sollten in PascalCase benannt werden
+* Basiskomponenten sollten alle mit dem gleichen Präfix beginnen (Basiskomponenten sind globale Komponenten wie eine Sidebar oder ein Header)
+* Komponentennamen sollten mehrsprachig benannt werden, um Konflikte mit HTML-Elementen zu vermeiden (beispielsweise sollte die Komponente nicht nur `TableHeader` heißen)
+* Einzelinstanzkomponenten sollten mit einem Präfix wie `the` beginnen um Konflikte zu vermeiden wie zum Beispiel `TheHeader`. Damit werden sie zusammengefasst und ihr einmaliger Gebrauch hervorgehoben
+* Verwandte untergeordnete Komponenten sollten mit dem Namen ihrer übergeordneten Komponente beginnen. Dadurch werden sie gruppiert und als verwandt hervorgehoben wie `ToDoListItem`
+* Komponenten solten mit der obersten Ebene, also dem Allgemeinsten beginnen und mit dem spezifischtem enden wie `AppSearchBarListSearchWidget`
+
+<br/><br/>
+
+Da wir eine modulare Architektur für die Anwendung gewählt haben, sollten die Dateien der zugehörigen Komponenten und Seiten mit einem eindeutigen Präfix benannt werden:
+* `App` für alle globalen Komponenten
+* `LPA` für die Seiten und Komponenten des LPA-Moduls
+* `Main` für die Seiten und Komponenten des Main-Moduls
 
 <br/><br/>
 
 ## Modulare Architektur
+Für die Anforderungen an die HWH Plattform eignet sich am besten eine Modulare Architektur. Die einzelnen Applikationen könnten nach und nach als neue Module in einer übergeordneten Plattform registriert werden. Zur besseren Übersichtlichkeit in der Projektstruktur haben wir allerdings diese "übergeordnete" Seite als ein weiteres Modul (das Modul Main) angesehen. Dieses haben wir neben dem LPA-Modul bereits begonnen umzusetzen. Dadurch kann die Projektstruktur einfacher von neuen Entwicklern verstanden werden.
 
-![Image of Architecture](images/frontend_abstract_architecture.png)
+<br/><br/>
+
+![Image of Architecture](images/abstract_architecture.png)
+
+<br/><br/>
+
+Das oben gezeigte Bild stellt sie Standardarchitektur für eine Vuejs Applikation dar. Diese wurde von uns durch einen modularen Ansatz erweitert. Eine modulare Architektur ist ein Weg, wie ein komplexes Problem in kleinere und einfacher zu managende Teile unterteilt werden kann. In der Softwareentwicklung gehen damit einige Guidlines, Prinzipien und Muster einher. Wir haben unseren Ansatz im folgenden Bild visualisiert. Das LPA-Modul enthält alle Projektdateien der Layered Process Audit Applikation. Das Main-Modul enthält analog alle Dateien, die für den übergeordneten Launcher benötigt werden. Aus diesem können dann übergeordnete Konfigurationen angezeigt werden wie die Einstellungen zur Unternehmenshierarchie mit Layern, Gruppen und einem Organigramm. Außerdem können aus diesem Modul auch die anderen Module bzw. Anwendungen gestartet werden.
+
+<br/><br/>
+
+![Image of Architecture](images/frontend_modular_architecture.png)
+
+<br/><br/>
+
+Wichtig ist vor allem, dass niemals eine Kommunikation unter den Modulen stattfinden soll. Es wird lediglich die übergeordnete Library in jedem Modul importiert. Diese wurde noch nicht als seperates Repository ausgelagert und vorerst in den Ordner Library verschoben. In einer zukünftigen Version der Applikation könnte sie aber aus einem anderen Ordner importiert werden oder sogar als ein Paket bei NPM veröffentlicht werden. Die übergeordnete Library enthält neben globalen Komponenten auch Interfaces, Stores, Router und Services.
 
 <br/><br/>
 
 ### Module registrieren
+Im Folgenden wird das Registrieren von neuen Modulen erklärt. Dazu muss zunächst ein neues Modul als Ordner im `modules` Ordner angelegt werden. Dieser Modul-Ordner kann je nach Notwendigkeit alle vorstellbaren Vuejs Projektordner enthalten. Im beschriebenen Beispiel wird angenommen, dass die Folgenden benötigt werden: `router`, `views`, `components`, `stores` und `interfaces`. Als erstes wird der `router` beschrieben. Zunächst wird in `MyModule/router` die Datei `index.ts` angelegt. Diese enthält den folgenden TypeScript Code für das beispielhafte Main-Modul:
+
+```ts
+import Dashboard from '../views/MainDashboard.vue'
+import Login from '../views/Login.vue'
+
+export const mainRoutes = [
+    {
+        path: '/',
+        name: 'MainDashboard',
+        component: Dashboard,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/Login',
+        name: 'Login',
+        component: Login,
+    }
+
+]
+```
+<br/><br/>
+
+Anschließend muss der übergeordnete Router angepasst werden. Dazu muss die Datei `index.ts` im `router` Ordner bearbeitet werden. Es muss hier die erstellte Datei eingebunden werden.
+
+```ts
+import { createRouter, createWebHistory } from 'vue-router'
+import { mainRoutes } from "../modules/main/router/index";
+import { lpaRoutes } from "../modules/lpa/router/index";
+
+const routes: any[] = [
+  ...mainRoutes,
+  ...lpaRoutes,
+];
+
+...
+```
+<br/><br/>
+
+Alle Elemente bis auf den `router` können einfach als neue Datei in einem neuen Ordner angelegt werden und sind automatisch im Projekt nutzbar. Der Vuejs Projektordner `assets` kann nicht in Modulen verwendet werden. Hierzu muss der übergeordnete Ordner verwendet werden, da nur dieser freigegeben ist.
 
 <br/><br/>
 
