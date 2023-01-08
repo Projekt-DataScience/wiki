@@ -169,6 +169,7 @@ Konventionen für die Komponenten:
 * Einzelinstanzkomponenten sollten mit einem Präfix wie `the` beginnen um Konflikte zu vermeiden wie zum Beispiel `TheHeader`. Damit werden sie zusammengefasst und ihr einmaliger Gebrauch hervorgehoben
 * Verwandte untergeordnete Komponenten sollten mit dem Namen ihrer übergeordneten Komponente beginnen. Dadurch werden sie gruppiert und als verwandt hervorgehoben wie `ToDoListItem`
 * Komponenten solten mit der obersten Ebene, also dem Allgemeinsten beginnen und mit dem spezifischtem enden wie `AppSearchBarListSearchWidget`
+* Es sollte nach Möglichkeit auf eine flache Komponentenhierarchie geachtet werden. Der Ordner Components sollte keine weiteren Ordner enthalten wenn nicht unbedingt notwendig
 
 <br/><br/>
 
@@ -768,36 +769,51 @@ Diese Komponente wurde begonnen, aber noch nicht fertig gestellt (da wir uns fü
 <br/><br/>
 
 ### App Interfaces
+@Jonas
 
 ### App Mixins
+@Jonas
 
 ### App Services
+@Jonas
 
 ### App Stores
+@Jonas
 
 ## Modules/LPA Module
 ### LPA Components
 #### LPADashboard
+@Jonas
 
 ### LPA Interfaces
+@Jonas
 
 ### LPA Router
+@Jonas
 
 ### LPA Stores
+@Jonas
 
 ### LPA Views
+@Jonas
 
 ## Modules/Main Module
+@Jonas
 
 ### Main Components
+@Jonas
 
 ### Main Router
+@Jonas
 
 ### Main Stores
+@Jonas
 
 ### Main Views
+@Jonas
 
 ## Übergeordneter Router
+@Jonas
 
 # Roadmap
 
