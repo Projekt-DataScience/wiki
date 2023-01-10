@@ -144,14 +144,18 @@ Ein typisches Vuejs 3 Projekt sieht wie folgt aus:
 
 <br/><br/>
 
-Darüber hinaus sind noch die folgenden Verzeichnisse sinnvoll:
-* `interfaces` Enthält Interfaces für die Arbeit mit Typescript Typen
-* `mixins` Enthält wiederverwendbare Javascript Funktionen
-* `services` Enthält bei uns Javascript Klassen wie den Login oder den Timer
+Darüber hinaus sind unter Umständen die folgenden Verzeichnisse in Zukunft sinnvoll:
+* `docs` Dokumentation direkt im Frontendordner wäre sinnvoll
+* `helpers` Nützliche, wiederverwendbare Klassen und Input-Output Funktionen (heißt aktuell `services`. Sollte umbenannt werden.)
+* `layouts` Enthält die Komponenten, die modulübergreifend benötigt werden (heißt aktuell `libraries`. Sollte umbenannt werden.)
+* `interfaces` Enthält Interfaces für die Arbeit mit Typescript (aktuell noch im Ordner `libraries` für übergeordnete Interfaces. Sollte verschoben werden.)
+* `mixins` Mixins sind kleine wiederverwendbare Vuejs Typescript Funktionen (aktuell noch im Ordner `libraries` für übergeordnete Mixins. Sollte verschoben werden.)
+* `plugins` Enthält alle verwendeten Plugins 
+* `globals.js` Übergeordnete Datei mit allen globalen Variablen
 
 <br/><br/>
 
-Die tatsächliche Verzeichnisstruktur, die sich durch die modulare Architektur ergeben hat, wurde [hier](#verzeichnisse) näher beschrieben.
+Die tatsächliche Verzeichnisstruktur, die sich durch die modulare Architektur ergeben hat, wurde [hier](#verzeichnisse) näher beschrieben. Weitere Informationen zur Ordnerstruktur finden sich in diesem [Artikel](https://vueschool.io/articles/vuejs-tutorials/how-to-structure-a-large-scale-vue-js-application/).
 
 
 <br/><br/>
