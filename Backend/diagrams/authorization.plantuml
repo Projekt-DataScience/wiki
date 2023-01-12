@@ -1,0 +1,39 @@
+@startuml
+
+participant frontend as "Frontend"
+participant api_gateway as "API Gateway"
+participant service as "Service"
+participant user_management_service as "User Management Service"
+
+skinparam style strictuml
+
+frontend -> api_gateway : Request
+api_gateway -> service : Request
+service -> user_management_service : Validate JWT
+
+alt JWT valid
+
+user_management_service --> service : Valid
+service -> service : Check Permissions
+
+alt Authorized
+
+service --> api_gateway : Success Response
+api_gateway --> frontend : Success Response
+
+else Unauthorized
+
+service --> api_gateway : Unauthorized
+api_gateway --> frontend : Unauthorized
+
+end 
+
+else JWT invalid
+
+user_management_service --> service: JWT Invalid
+service --> api_gateway : JWT Invalid
+api_gateway --> frontend : JWT Invalid
+
+end
+
+@enduml

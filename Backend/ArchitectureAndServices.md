@@ -12,6 +12,10 @@ The architecture is a SOA-based architecture. For simplicity resonse we are only
 
 ![authentication-sequence-diagram](./diagrams/authentication.png)
 
+## Authorization
+
+![authorization-sequence-diagram](./diagrams/authorization.png)
+
 # Services
 
 | Name            | Responsiblity                                                                                                                                                         | Repository URL                                                 |
