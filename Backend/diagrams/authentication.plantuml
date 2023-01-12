@@ -8,7 +8,17 @@ skinparam style strictuml
 
 frontend -> api_gateway : Login
 api_gateway -> user_management_service : Login
+
+alt credentials valid
+
 user_management_service --> api_gateway : JWT Token
 api_gateway --> frontend : JWT Token
+
+else credentials invalid
+
+user_management_service --> api_gateway: Error
+api_gateway --> frontend : Error
+
+end
 
 @enduml
