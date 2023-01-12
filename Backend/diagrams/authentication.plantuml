@@ -1,0 +1,14 @@
+@startuml
+
+participant frontend as "Frontend"
+participant api_gateway as "API Gateway"
+participant user_management_service as "User Management Service"
+
+skinparam style strictuml
+
+frontend -> api_gateway : Login
+api_gateway -> user_management_service : Login
+user_management_service --> api_gateway : JWT Token
+api_gateway --> frontend : JWT Token
+
+@enduml

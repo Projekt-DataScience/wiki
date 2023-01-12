@@ -1,6 +1,7 @@
 @startuml
 
 top to bottom direction
+skinparam style strictuml
 
 node frontend as "Frontend"
 node api_gateway as "API Gateway Server" {
@@ -49,7 +50,7 @@ database database as "Database Server" {
 
 skinparam linetype polyline
 
-frontend -> api_gateway : HTTP
+frontend - api_gateway : HTTP
 api_gateway -- user_management: HTTP
 api_gateway -- audit: HTTP
 api_gateway -- tasks: HTTP
