@@ -1,0 +1,61 @@
+@startuml
+
+top to bottom direction
+
+node frontend as "Frontend"
+node api_gateway as "API Gateway Server" {
+    artifact gateway as "Nginx" {
+        component gateway_cfg as "gateway.conf"
+    }
+    
+}
+
+node user_management as "User Management Server" {
+    artifact u_service as "User Management Service     " {
+        component u_app as "FastAPI App"
+        component u_db as "backend-db-lib"
+
+        u_app --> u_db
+    }
+}
+node audit as "Audit Server" {
+    artifact audit_service as "Audit Service" {
+        component audit_app as "FastAPI App"
+        component a_db as "backend-db-lib"
+
+        audit_app --> a_db
+    }
+}
+node tasks as "Tasks Server" {
+    artifact tasks_service as "Tasks Service" {
+        component tasks_app as "FastAPI App"
+        component t_db as "backend-db-lib"
+
+        tasks_app --> t_db
+    }
+    
+}
+node manager as "Manager Server" {
+    artifact manager_service as "Manager Service" {
+        component m_db as "backend-db-lib"
+        component manager_app as "FastAPI App"
+
+        manager_app --> m_db
+    }
+} 
+database database as "Database Server" {
+    artifact postgresql as "PostgreSQL"
+}
+
+frontend -> api_gateway : HTTP
+api_gateway --> user_management: HTTP
+api_gateway --> audit: HTTP
+api_gateway --> tasks: HTTP
+api_gateway --> manager: HTTP
+
+user_management ---> database
+audit ---> database 
+tasks ---> database 
+manager ---> database 
+
+@enduml
