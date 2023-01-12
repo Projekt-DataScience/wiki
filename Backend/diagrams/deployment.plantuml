@@ -54,7 +54,6 @@ frontend - api_gateway : HTTP
 api_gateway -- user_management: HTTP
 api_gateway -- audit: HTTP
 api_gateway -- tasks: HTTP
-api_gateway -- manager: HTTP
 
 user_management --- database
 audit --- database 
