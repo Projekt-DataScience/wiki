@@ -5,7 +5,7 @@ top to bottom direction
 node frontend as "Frontend"
 node api_gateway as "API Gateway Server" {
     artifact gateway as "Nginx" {
-        component gateway_cfg as "gateway.conf"
+        component gateway_cfg as "gateway.conf" << file >>
     }
     
 }
@@ -13,49 +13,51 @@ node api_gateway as "API Gateway Server" {
 node user_management as "User Management Server" {
     artifact u_service as "User Management Service     " {
         component u_app as "FastAPI App"
-        component u_db as "backend-db-lib"
+        component u_db as "backend-db-lib" << library >>
 
-        u_app --> u_db
+        u_app -[dashed]-> u_db
     }
 }
 node audit as "Audit Server" {
     artifact audit_service as "Audit Service" {
         component audit_app as "FastAPI App"
-        component a_db as "backend-db-lib"
+        component a_db as "backend-db-lib" << library >>
 
-        audit_app --> a_db
+        audit_app -[dashed]-> a_db
     }
 }
 node tasks as "Tasks Server" {
     artifact tasks_service as "Tasks Service" {
         component tasks_app as "FastAPI App"
-        component t_db as "backend-db-lib"
+        component t_db as "backend-db-lib" << library >>
 
-        tasks_app --> t_db
+        tasks_app -[dashed]-> t_db
     }
     
 }
 node manager as "Manager Server" {
     artifact manager_service as "Manager Service" {
-        component m_db as "backend-db-lib"
+        component m_db as "backend-db-lib" << library >>
         component manager_app as "FastAPI App"
 
-        manager_app --> m_db
+        manager_app -[dashed]-> m_db
     }
 } 
 database database as "Database Server" {
     artifact postgresql as "PostgreSQL"
 }
 
-frontend -> api_gateway : HTTP
-api_gateway --> user_management: HTTP
-api_gateway --> audit: HTTP
-api_gateway --> tasks: HTTP
-api_gateway --> manager: HTTP
+skinparam linetype polyline
 
-user_management ---> database
-audit ---> database 
-tasks ---> database 
-manager ---> database 
+frontend -> api_gateway : HTTP
+api_gateway -- user_management: HTTP
+api_gateway -- audit: HTTP
+api_gateway -- tasks: HTTP
+api_gateway -- manager: HTTP
+
+user_management --- database
+audit --- database 
+tasks --- database
+manager --- database 
 
 @enduml
