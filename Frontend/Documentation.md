@@ -774,51 +774,144 @@ Diese Komponente wurde begonnen, aber noch nicht fertig gestellt (da wir uns fü
 <br/><br/>
 
 ### App Interfaces
-@Jonas
+Hier werden die übergeordneten Interfaces mit ihren Attributen deklariert, die für alle Komponenten von Beudeutung sind. 
+Sie dienen außerdem dazu, dass in VS die entsprechenden Attribute vorgeschlagen werden.
+Aktuell sind hier definiert: Group, Layer, Task und User.
+
+<br/><br/>
 
 ### App Mixins
-@Jonas
+Hier werden die wiederverwendbaren Funktionen für die übergeordneten Komponenten deklariert.
+Aktuell sind hier definiert: 
+| Mixin | Funktion | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|
+| arrayMixin | getIsLast(item, array) | Überprüft, ob das item das letzte in dem array ist |
+| truncateStringMixin  | truncateString(String, number) | Kürzt den String auf number Stellen und fügt ein "..." an |
+| concateStringMixin | concateStrings(...args: string[]) | Fügt beliebig viele Strings zu einem String zusammen |
+| stringToDateMixin | stringToDateLongWeekday(string), stringToDate(string) | Wandelt den übergebenen String in ein Date-Objekt um |
+| changeAppName | getLongNameForApp(string) | Wandelt den Kurznamen einer Anwendung in den ausgeschriebenen Namen um (bisher nur lpa > Layered Process Auditing) |
+| germanDateStrings |   getGermanMonthValues(string), getGermanMonthValuesShort(string), getGermanWeekdayValues(string), getGermanWeekdayValuesShort(string) | übersetzt den Monat/Tag String von englisch auf Deutsch (Lang- oder Kurzschreibweise) |
+
+<br/><br/>
 
 ### App Services
-@Jonas
+Hier werden die allgemein verwendeten Services deklariert. Unter anderem wird hier der Header erzeugt, es findet die Authentication statt und die gemessene Zeit für einen Audit wird bestimmt.
+
+<br/><br/>
+
+#### types
+Hier werden die verschiedenen Interfaces bereitgestellt, die für die Authentication genutzt werden. 
+
+<br/><br/>
+
+#### authHeader
+Der authHeader stellt die Funktion bereit, den Header, der für die Kommunikation mit der REST-API benötigt wird, zu erzeugen. 
+Wenn im localstorage des Browsers ein "user" existiert wird der Header aus dessen gespeicherten Token zusammengestellt.
+
+<br/><br/>
+
+#### authService
+Der authService stellt die Funktionen für den Login, Logout eines Users bereit. Das Anlegen eines Users ist vorgesehen, wurde aber noch nicht realisiert.
+Außerdem kann der gespeicherte JWT-Token validiert werden um zu prüfen, ob die Anmeldung des Users noch gültig ist und dessen Userdaten werden bereitgestellt.
+
+<br/><br/>
 
 ### App Stores
-@Jonas
+Hier sind die Stores gespeichert, die allgemeine Bedeutung besitzen. Zum einen ist dies der **Task-Store**, der alle Informationen zu den Tasks des Users enthält. Zum anderen der **Auth-** und der **User-Store**, die die gespeicherten Informationen über angemeldeten User enthalten.
+Über die fetch-Funktionen werden die jeweiligen benötigten Daten in den Store geladen. 
+
+<br/><br/>
 
 ## Modules/LPA Module
 ### LPA Components
-#### LPADashboard
-@Jonas
+#### LPADashboardHeader
+Der DashboardHeader enthält die AppSearchAndFilterBar und wird im Dashboard der LPA-Anwendung verwendet
+
+<br/><br/>
+
+#### LPAHistoryBar
+Die HistroyBar wird für die Visualiserung der Audit-Ergebnisse in der History verwendet.
+Es werden die nur die letzten acht Audit-Ergebnisse angezeigt, die jeweilige Farbe beruht auf ihrem Ergebnis.
+
+<br/><br/>
+
+#### LPAQuestionBar
+Die QuestionBar wird für die Visualisierung der Antworten der Fragen verwendet. 
+Die Breite der jeweiligen Antwort-Farbe wird durch ihren Anteil berechnet. 
+
+<br/><br/>
+
+#### LPASidebar
+Die LPA-Sidebar wird verwendet um zwischen den verschiedenen LPA Seiten zu navigieren.
+Über den Toggle-Button kann sie ein- oder ausgeklappt werden.
+
+<br/><br/>
 
 ### LPA Interfaces
-@Jonas
+Hier werden die Interfaces deklariert, die für die LPA Anwendung von Bedeutung sind.
+
+<br/><br/>
 
 ### LPA Router
-@Jonas
+Um zwischen den verschiedenen Seiten in der LPA Anwendung zu navigieren, wird der LPA Router verwendet.
+Hier werden alle Views als Kinderknoten mit dem entsprechenden Pfad gespeichert.
+
+<br/><br/>
 
 ### LPA Stores
-@Jonas
+Hier sind die Stores gespeichert, die für die LPA Anwendung benötigt werden.
+- Im **Analytics** Store werden die Daten für die Auswertung der Audits gespeichert.
+- Im **Answers** Store werden alle Antworten für die Auswertung gespeichert.
+- Im **AuditHistory** Store werden alle fertigen Audits für die Auswertung der History gespeichert.
+- Im **Audits** Store werden alle Audits für die Auswertung gespeichert.
+- Im **questions** Store werden alle Fragen für die Auswertung gespeichert.
+
+<br/><br/>
 
 ### LPA Views
-@Jonas
+Hier werden die verschiedenen Seiten für die LPA Anwendung gespeichert.
+- In **LPAAnalytics** werden die ausgewerteten Daten aus den Audits dargestellt.
+- In **LPAAudit** wird der aktuelle Audit zum Ausfüllen dargestellt. Über ein Popup können die einzelnen Fragen beantwortet werden.
+- In **LPAConfiguration** können Einstellungen für die Audits verwaltet werden.
+- In **LPADashboard** werden alle für den Nutzer interessanten Infos zu seinen Audits dargestellt. Auch offene Audits lassen sich von hier aus starten.
+- In **LPAHistory** werden alle vergangenen Audits mit ihren Ergebnissen dargestellt.
+- In **LPAQuestions** werden alle Fragen mit ihren Ergebnissen dargestellt. Auch neue Fragen können hier hinzugefügt werden.
+
+<br/><br/>
 
 ## Modules/Main Module
-@Jonas
-
 ### Main Components
-@Jonas
+#### MainHeader
+Der MainHeader wird für alle Main-Views (außer Login) auf dem oberen Bildschirmrand dargestellt.
+
+<br/><br/>
 
 ### Main Router
-@Jonas
+Um zwischen den verschiedenen Seiten im Main-Modul zu navigieren, wird der Main Router verwendet.
+Hier werden alle Views als Kinderknoten mit dem entsprechenden Pfad gespeichert.
+
+<br/><br/>
 
 ### Main Stores
-@Jonas
+Hier sind die Stores gespeichert, die für das Main-Modul benötigt werden.
+Aktuell ist hier nur ein Dummy-Store erstellt, der verfügbare Anwendungen mit ihren Bildern lädt.
+Da aktuell nur die LPA-Anwendung realisiert wurde, werden die verfügbaren Anwendungen nicht aus dem Backend geladen, sondern sind fest in den Store geschrieben.
+
+<br/><br/>
 
 ### Main Views
-@Jonas
+Hier werden die verschiedenen Seiten für die Main-Modules gespeichert.
+- Im **Login** wird die Anmeldung des Users dargestellt.
+- Im **MainDashboard** werden die verfügbaren Applikationen dargestellt.
+
+<br/><br/>
 
 ## Übergeordneter Router
-@Jonas
+Im übergeordneten Router werden die Router des Main und LPA Moduls registriert, die zu den jeweiligen Views navigieren.
+Außerdem wird eine Webhistory für den User erstellt, damit er über den "Zurück" Button des Browsers zur letzten Seite zurückkehren kann.
+Bei jedem Aufruf einer View wird überprüft, ob der User noch eingeloggt ist und über einen gültigen Token verfügt.
+
+<br/><br/>
 
 # Roadmap
 
