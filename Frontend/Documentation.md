@@ -460,9 +460,17 @@ Die aktuelle IconLibrary wird über die Komponente AppIconLibrary realisiert. Du
 <br/><br/>
 
 **Übersicht über die Icons:**<br/>
-Alle Icons mit ihrem Namen und möglichen Type Props. @Jonas
+Alle Icons mit ihrem Namen und möglichen Type Props.
+
 <br/><br/>
 
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Prop | icon | Ja | - | Dieser Prop legt fest, um welches Icon es sich handelt. |
+| Prop | styling | Nein | - | Dieser Prop legt die Styling-Eigenschaften des Icons fest. |
+| Prop | type | Nein | none | Dieser Prop kann unterschiedliche Icontypen eines Icons unterscheiden, z.B. Red, Yellow und Green beim Audit-Antowrt-Smiley. |
+
+<br/><br/>
 
 **Neues Icon hinzufügen:**<br/>
 Als erstes wird ein neuer `div`-Tags eingefügt, der den Namen des Icons als if-Abfrage beinhaltet.
@@ -594,7 +602,22 @@ Die AppInputDropdown-Komponente wird verwendet, wenn ein Dropdown-Item im Input 
 <br/><br/>
 
 #### AppInputTextField
-@Jonas
+Die AppInputTextField-Komponente wird für Benutzereingaben verwendet. Beispielsweise kann somit im Login die Emailadresse und das Passwort eingegeben werden.
+
+<br/><br/>
+
+**Aktionen:**
+
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Prop |headline | Ja | - | Die Headline wird über dem Input Feld angezeigt und beschreibt den Inhalt, der eingegeben werden soll. |
+| Prop | name | Ja | - | Mit diesem Prop kann der Name des Feldes definiert werden. |
+| Prop | id | Ja | - | Mit diesem Prop kann die ID des Feldes definiert werden. |
+| Prop | label | Ja | - | Mit diesem Prop kann das Label des Feldes definiert werden. |
+| Prop | type | Ja | - | Mit diesem Prop kann der Typ des Feldes definiert werden. |
+| Prop | autocomplete | Ja | - | Mit diesem Prop kann die Autocomplete Funktion des Browsers das zugehörige Feld automatisch einfügen, sofern es zuvor gespeichert wurde. |
+| Prop | text | Ja | - | Mit diesem Prop kann der Texttyp des Feldes definiert werden, bei password wird der Inhalt verschlüsselt. |
+| Emit | input | - | - | Beim Auslösen des Emits werden die eingetragenen Werte übermittelt.  |
 
 <br/><br/>
 
@@ -769,7 +792,20 @@ Diese Komponente wurde begonnen, aber noch nicht fertig gestellt (da wir uns fü
 <br/><br/>
 
 #### AppTaskList
-@Jonas
+Die AppTaskList-Komponente wird für die Darstellung der Informationen der offenen Tasks genutzt.
+
+<br/><br/>
+
+**Aktionen:**
+
+| Typ | Name | Pflicht | Standardwert | Beschreibung |
+|-----------------|-----------------|---------------------------------------------|-----------------|-----------------|
+| Prop | subtext | Ja | - | Dieser Prop enthält die Strings die als Subtext dargestellt werden, beim Audit Layer und Datum.  |
+| Prop | text | Ja | - | Dieser Prop enthält den Aufgabentitel des Tasks. |
+| Prop | title | Ja | - | Dieser Prop enthält den Modultitel des Tasks. |
+| Prop | action | Ja | - | Dieser Prop enthält die Action des Tasks, also wohin er verlinkt werden soll. |
+| Prop | showButton | Nein | true | Dieser Prop gibt an, ob ein Button mit Link mit dem Task angezeigt wird. |
+
 
 <br/><br/>
 
