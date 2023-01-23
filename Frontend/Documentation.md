@@ -270,7 +270,8 @@ import {AppButtonPrimary, AppButtonSecondary, AppButtonTertiary} from "./librari
 
 #### Registrieren von Komponenten
 Im Folgenden wird beschrieben, wie neue Komponenten in der Library registriert werden können.
-Damit die Übersichtlichkeit erhalten bleibt und der Import von Komponenten einfach gehalten werden kann, haben wir für jede Library ein File erstellt, das alle Komponenten zur Verfügung stellt.
+
+Damit die Übersichtlichkeit erhalten bleibt und der Import von Komponenten einfach gehalten werden kann, haben wir für jede Library ein eigenes File erstellt, das alle Komponenten zur Verfügung stellt.
 
 Um eine neue Komponente in einer Library zu registrieren, muss sie im übergeordneten Library-File als .vue importiert werden und aschließend mit dem gleichen Namen exportiert werden. Einzig die Inerfaces werden hierbei als spezieller type Typ exportiert.
 Dadurch können später alle benötigten Komponenten aus einer Library einfach in einer Zeile importiert werden, anstatt für jede Komponente einen neuen Import zu schreiben. 
